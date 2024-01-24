@@ -1,6 +1,2 @@
-<<<<<<< HEAD
-*.gitignore
-./src/projects/newTweet
-=======
-newTweet.html
->>>>>>> 22b2037243038c2bb56097e8dea144b0258f0119
+.gitignore
+src/projects/newTweet
