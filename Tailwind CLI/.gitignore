@@ -1,1 +1,2 @@
-src/projects/newTweet.html,
+*.gitignore
+./src/projects/newTweet
