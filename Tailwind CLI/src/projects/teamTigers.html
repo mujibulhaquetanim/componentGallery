@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../output/style.css">
-    <link rel="stylesheet" href="../marquee.css">
+    <!-- <link rel="stylesheet" href="../marquee.css"> -->
     <title>Tailwind using CLI</title>
 </head>
 <body class="dark:bg-slate-700 grid place-content-center h-screen">
     <!-- marquee tag is deprecated. -->
+    <!-- overflow-hidden applied to confined the translation within the div. -->
+    <!-- maruqee.css file added to write custom css -->
+    <!-- keyframe and animation added in the input.css file -->
     <div class="">
         <marquee direction="left" class="overflow-hidden border-2 text-white text-5xl px-3 py-2 text-center hover:ring-2 hover:ring-offset-2 m-6 rounded-full animate-bounce"><span class="text-green-600">Together</span> We <span class="text-red-600">Roar</span> </marquee>
 

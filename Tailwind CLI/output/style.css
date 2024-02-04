@@ -792,10 +792,6 @@ video {
   overflow: hidden;
 }
 
-.overflow-ellipsis {
-  text-overflow: ellipsis;
-}
-
 .rounded-3xl {
   border-radius: 1.5rem;
 }
