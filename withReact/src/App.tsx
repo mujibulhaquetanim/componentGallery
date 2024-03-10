@@ -1,11 +1,11 @@
-
+import React from 'react'
+import DragAndDrop from './components/DragAndDrop'
 function App() {
- 
 
   return (
-    <>
-    <h1>Aayin?</h1>
-    </>
+   <>
+   <DragAndDrop />
+   </>
   )
 }
 
