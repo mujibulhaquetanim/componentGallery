@@ -22,16 +22,16 @@ function ScrollingProgress() {
   });
 
   return (
-    <div>
-      <div className={`h-2 w-full fixed top-0 `}>
+    <div className="w-full fixed top-0">
+      <div className="h-2 w-full">
         <div
-          className="h-full bg-green-800"
+          className="h-full bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%"
           style={{ width: `${scroll}%` }}
         ></div>
       </div>
 
-      <div className="font-bold top-4 fixed">
-        <div className="flex justify-end bg-slate-100 p-1">
+      <div className="font-bold">
+        <div className="flex justify-end p-1 text-white">
           Scroll Value = {scroll}%
         </div>
       </div>
