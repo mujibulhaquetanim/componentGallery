@@ -1,6 +1,6 @@
 interface props {
   tagName: string;
-  // setTags: React.Dispatch<React.SetStateAction<string[]>>
+  select: (tag: string) => void;
   selectTag: (tagName: string) => void;
 }
 

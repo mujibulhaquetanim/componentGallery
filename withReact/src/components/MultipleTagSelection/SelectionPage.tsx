@@ -7,6 +7,9 @@ interface tag {
 
 export default function SelectionPage() {
   const [tags, setTags] = useState<tag>({ tag: [] });
+  const checkTag = (tag: string) => {
+    tags.tag.filter((item) => item !== tag);
+  };
 
   const selectTag = (tag: string) => {
     if (tags.tag.some((item) => item === tag)) {
@@ -25,10 +28,13 @@ export default function SelectionPage() {
 
   return (
     <div>
-      <Tag tagName="JS" selectTag={selectTag} />
-      <Tag tagName="Python" selectTag={selectTag} />
-      <Tag tagName="GO" selectTag={selectTag} />
-      <Tag tagName="C" selectTag={selectTag} />
+      <div className="border-2 mt-3 justify-center flex flex">
+        <Tag tagName="JS" selectTag={selectTag} select={checkTag} />
+        <Tag tagName="Python" selectTag={selectTag} select={checkTag} />
+        <Tag tagName="GO" selectTag={selectTag} select={checkTag} />
+        <Tag tagName="C" selectTag={selectTag} select={checkTag} />
+      </div>
+      <div className="gap=3 m-3">You have selected: {tags.tag} </div>
     </div>
   );
 }
