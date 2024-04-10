@@ -2,7 +2,10 @@
 // import DragAndDrop from "./components/DragAndDrop";
 // import ScrollingProgress from "./components/Scroll/ScrollingProgress";
 // import ProfileCard from "./components/ProfileCard";
-import SelectionPage from "./components/MultipleTagSelection/SelectionPage";
+
+import ReactForm from "./components/Form/ReactForm";
+
+// import SelectionPage from "./components/MultipleTagSelection/SelectionPage";
 function App() {
   return (
     <>
@@ -10,7 +13,9 @@ function App() {
       <ProfileCard/>
       <DragAndDrop />
       <DummyText /> */}
-      <SelectionPage/>
+      {/* <SelectionPage/> */}
+      <ReactForm/>
+      
     </>
   );
 }
