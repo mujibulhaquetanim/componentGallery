@@ -1,5 +1,11 @@
 import { useState } from "react";
 
+interface InputChangeEvent {
+  target: {
+    value: string;
+  };
+}
+
 export default function ReactForm() {
   const [contact, setcontact] = useState({
     fname: "",
@@ -13,7 +19,7 @@ export default function ReactForm() {
     agree: "",
   });
 
-  function handleChange(event) {
+  function handleChange(event: InputChangeEvent): void {
     console.log(event.target.value);
   }
 
