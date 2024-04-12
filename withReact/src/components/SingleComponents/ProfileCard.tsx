@@ -1,12 +1,32 @@
+import profilePic from "../../assets/profilePic.png";
 
 export default function ProfileCard() {
   return (
-    <div className="ufc" style={{border:'2px', margin:'3px'}}>
-      <div className="Gradient" style={{color:"green"}}></div>
-      <div className="Profile-down" style={{color:"green"}}></div>
-      <img className="ufc-img" style={{color:"green"}} src="" alt="Profile Picture" />
-      <div className="ProfileTitle" style={{color:"green"}}></div>
-      <div className="ProfileDescription" style={{color:"green"}}></div>
+    <div className="upc m-3 flex items-center justify-center border-2 p-3">
+      <div className="Gradient"></div>
+
+      <div className="Profile-down">
+        <div className="image flex justify-center">
+          <img
+            className="w-36 h-36 rounded-full"
+            src={profilePic}
+            alt="Profile Picture"
+          />
+        </div>
+        <div className="ProfileTitle justify-center flex text-3xl font-bold">
+          Mohammed Hijab
+        </div>
+        <div className="ProfileDescription">
+          Mohammed Hijab is a debater and public speaker who engages in
+          discussions and polemics on a wide variety of topics including
+          religion, politics and society.
+        </div>
+        <div className="flex justify-center">
+          <button className="bg-green-950 text-white p-3 rounded-sm m-3">
+            Contact Me
+          </button>
+        </div>
+      </div>
     </div>
   );
 }
