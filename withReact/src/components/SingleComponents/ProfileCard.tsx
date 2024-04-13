@@ -2,8 +2,8 @@ import profilePic from "../../assets/profilePic.png";
 
 export default function ProfileCard() {
   return (
-    <div className="upc m-3 flex items-center justify-center border-2 p-3">
-      <div className="Gradient"></div>
+    <div className="upc m-3 flex items-center justify-center border-2 p-3 w-1/3">
+      <div className="Gradient w-full h-20"></div>
 
       <div className="Profile-down">
         <div className="image flex justify-center">
@@ -22,7 +22,7 @@ export default function ProfileCard() {
           religion, politics and society.
         </div>
         <div className="flex justify-center">
-          <button className="bg-green-950 text-white p-3 rounded-sm m-3">
+          <button className="bg-green-950 text-white p-3 rounded-sm m-3 hover:scale-95">
             Contact Me
           </button>
         </div>
