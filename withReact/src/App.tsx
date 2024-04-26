@@ -3,7 +3,8 @@
 // import ScrollingProgress from "./components/Scroll/ScrollingProgress";
 // import ReactForm from "./components/Form/ReactForm";
 // import SelectionPage from "./components/MultipleTagSelection/SelectionPage";
-import ProfileCard from "./components/SingleComponents/ProfileCard";
+// import ProfileCard from "./components/SingleComponents/ProfileCard";
+import ReactHookForm from "./components/Form/ReactHookForm";
 
 
 function App() {
@@ -14,7 +15,8 @@ function App() {
       <DummyText /> */}
       {/* <SelectionPage/> */}
       {/* <ReactForm/> */}
-      <ProfileCard/>
+      {/* <ProfileCard/> */}
+      <ReactHookForm/>
     </>
   );
 }
