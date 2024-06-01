@@ -1,4 +1,4 @@
-@keyframes marquee {
+@keyframes marqueee {
     0% {
       transform: translateX(100%);
     }
@@ -7,7 +7,7 @@
     }
   }
   
-  .marquee {
+  .marqueee {
     @apply overflow-hidden whitespace-nowrap;
     animation: marquee 10s linear infinite;
   }
