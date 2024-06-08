@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../../output/style.css" />
-    <title>Notification Dot</title>
-  </head>
-  <body>
-    <div class="flex justify-center items-center h-screen">
-      <div
-        class="relative inline-block border-solid border-2 hover:border-4 p-2 rounded-2xl hover:border-dotted hover:scale-105 hover:cursor-pointer text-blue-600 text-3xl font-bold"
-      >
-        <div>Notification Dot</div>
-        <span
-          class="absolute inline-block hover:scale-125 min-h-3 min-w-3 rounded-full bg-blue-700 -top-1 -right-1"
-        ></span>
-      </div>
-    </div>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../../output/style.css" />
+  <title>Notification Dot</title>
+</head>
+<body class="flex items-center justify-center h-screen bg-gray-100">
+  <div
+    class="relative inline-block p-2 border-2 rounded-2xl border-solid text-blue-600 text-3xl font-bold transition-transform transform hover:border-4 hover:border-dotted hover:scale-105 cursor-pointer"
+    aria-label="Notification Dot"
+    role="button"
+  >
+    Notification Dot
+    <span
+      class="absolute inline-block w-3 h-3 bg-blue-700 rounded-full -top-1 -right-1 transition-transform transform hover:scale-125"
+      aria-hidden="true"
+    ></span>
+  </div>
+</body>
 </html>
