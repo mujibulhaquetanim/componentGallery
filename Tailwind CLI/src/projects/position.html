@@ -1,18 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../output/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../output/style.css" />
     <title>Document</title>
-</head>
-<body>
-    <section class="h-screen w-screen text-center flex justify-center items-center">
-        <div class="w-64 h-64 bg-red-500">item 1</div>
-        <div class="w-64 h-64 bg-blue-500">item 2</div>
-        <div class="w-64 h-64 bg-green-500">item 3</div>
-        <div class="w-64 h-64 bg-yellow-500">item 4</div>
-        <div class="w-64 h-64 bg-pink-500">item 5</div>
+  </head>
+  <body>
+    <section class="h-screen grid grid-cols-3 place-items-center gap-0">
+      <div class="w-full h-24 bg-red-500 flex items-center justify-center">
+        item 1
+      </div>
+      <div class="w-full h-24 bg-green-500 flex items-center justify-center">
+        item 2
+      </div>
+      <div class="w-full h-24 bg-blue-500 flex items-center justify-center">
+        item 3
+      </div>
+
+      <div class="w-full h-24 bg-red-500 flex items-center justify-center">
+        item 4
+      </div>
+      <div class="w-full h-24 bg-green-500 flex items-center justify-center">
+        item 5
+      </div>
+      <div class="w-full h-24 bg-blue-500 flex items-center justify-center">
+        item 6
+      </div>
+
+      <div class="w-full h-24 bg-red-500 flex items-center justify-center">
+        item 7
+      </div>
+      <div class="w-full h-24 bg-green-500 flex items-center justify-center">
+        item 8
+      </div>
+      <div class="w-full h-24 bg-blue-500 flex items-center justify-center">
+        item 9
+      </div>
+
+      <div class="w-full h-24 bg-red-500 flex items-center justify-center">
+        item 10
+      </div>
+      <div class="w-full h-24 bg-green-500 flex items-center justify-center">
+        item 11
+      </div>
+      <div class="w-full h-24 bg-blue-500 flex items-center justify-center">
+        item 12
+      </div>
     </section>
-</body>
+
+    <!-- positioning with relative-absolute within the same parent -->
+    <section class="w-full justify-center items-center flex gap-1">
+      <div class="w-1/2 flex justify-center items-center border-2 p-2 gap-1">
+        <div class="inline-block border-2">hello world</div>
+        <div class="border-2 inline-block">aayain</div>
+      </div>
+
+      <div class="w-1/2 flex justify-center items-center gap-1 border-2 p-2">
+        <div class="inline-block border-2">hello world</div>
+        <div class="border-2 inline-block">aayain</div>
+      </div>
+
+      <div class="w-1/2 flex justify-center items-center gap-1 border-2 p-2">
+        <div class="inline-block border-2 p-">hello world</div>
+
+        <div class="relative">
+          <div class="border-2 inline-block">aayain</div>
+          <span
+            class="absolute bg-red-700 w-2 h-2 rounded-full left-11 -top-0.5"
+          ></span>
+        </div>
+      </div>
+    </section>
+  </body>
 </html>
