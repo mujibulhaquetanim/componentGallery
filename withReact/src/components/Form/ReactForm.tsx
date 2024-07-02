@@ -1,104 +1,162 @@
-import { useState } from "react";
+import React, { useState, ChangeEvent } from "react";
 
-interface InputChangeEvent {
-  target: {
-    value: string;
-  };
+interface Contact {
+  fname: string;
+  email: string;
+  password: string;
+  address: string;
+  color: string;
+  city: string;
+  state: string;
+  zip: string;
+  agree: boolean;
 }
 
-export default function ReactForm() {
-  const [contact, setcontact] = useState({
+const App: React.FC = () => {
+  const [contact, setContact] = useState<Contact>({
     fname: "",
     email: "",
     password: "",
-    color: "",
     address: "",
+    color: "",
     city: "",
     state: "",
     zip: "",
-    agree: "",
+    agree: false,
   });
 
-  function handleChange(event: InputChangeEvent): void {
-    console.log(event.target.value);
-  }
+  const handleChange = (
+    event: ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >
+  ) => {
+    const { name, value, type } = event.target as
+      | HTMLInputElement
+      | HTMLSelectElement
+      | HTMLTextAreaElement;
+
+    if (type === "checkbox") {
+      const checked = (event.target as HTMLInputElement).checked;
+      setContact({
+        ...contact,
+        [name]: checked,
+      });
+    } else {
+      setContact({
+        ...contact,
+        [name]: value,
+      });
+    }
+  };
 
   return (
-    <div>
-      <form>
-        <div>
-          <label htmlFor="fname">Full Name:</label>
+    <div className="p-8 flex justify-around">
+      <form className="bg-gray-200 p-2 rounded w-1/2 mr-4">
+        <div className="my-2">
+          <label className="mx-4" htmlFor="fname">
+            Full Name
+          </label>
           <input
-            onChange={handleChange}
             type="text"
             name="fname"
             id="fname"
-            placeholder="Enter your full name"
+            value={contact.fname}
+            placeholder="Enter Full Name"
+            className="border border-gray-400 rounded p-1"
+            onChange={handleChange}
             required
           />
         </div>
 
-        <div>
-          <label htmlFor="fname">Email</label>
+        <div className="my-2">
+          <label className="mx-4" htmlFor="email">
+            Email
+          </label>
           <input
-            onChange={handleChange}
             type="email"
             name="email"
             id="email"
-            placeholder="Enter your email"
+            value={contact.email}
+            placeholder="Enter Email"
+            className="border border-gray-400 rounded p-1"
+            onChange={handleChange}
             required
           />
         </div>
 
-        <div>
-          <label htmlFor="password">Password</label>
+        <div className="my-2">
+          <label className="mx-4" htmlFor="password">
+            Password
+          </label>
           <input
-            onChange={handleChange}
             type="password"
             name="password"
             id="password"
-            placeholder="Enter your password"
+            value={contact.password}
+            placeholder="Enter Password"
+            className="border border-gray-400 rounded p-1"
+            onChange={handleChange}
             required
           />
         </div>
 
-        <div>
-          <label htmlFor="color">Enter Your favorite Color</label>
+        <div className="my-2">
+          <label className="mx-4" htmlFor="color">
+            Your Favorite Color
+          </label>
           <input
-            onChange={handleChange}
             type="color"
             name="color"
             id="color"
-            required
+            value={contact.color}
+            className="border border-gray-400 rounded p-1"
+            onChange={handleChange}
           />
         </div>
 
-        <div>
-          <label htmlFor="Address">Address</label>
+        <div className="my-2">
+          <label className="mx-4" htmlFor="address">
+            Address
+          </label>
           <textarea
-            name="Address"
-            id="Address"
-            placeholder="Enter your home address"
-            required
+            name="address"
+            id="address"
+            placeholder="Where Can We Find You?"
+            value={contact.address}
+            className="border border-gray-400 rounded p-1"
             onChange={handleChange}
+            required
           />
         </div>
 
-        <div>
-          <label htmlFor="city">City Name</label>
+        <div className="my-2">
+          <label className="mx-4" htmlFor="city">
+            City
+          </label>
           <input
-            onChange={handleChange}
             type="text"
             name="city"
             id="city"
-            placeholder="Enter your city"
+            value={contact.city}
+            placeholder="Enter Your City"
+            className="border border-gray-400 rounded p-1"
+            onChange={handleChange}
             required
           />
         </div>
 
-        <div>
-          <label htmlFor="state">State</label>
-          <select name="state" id="state" onChange={handleChange}>
+        <div className="my-2">
+          <label className="mx-4" htmlFor="state">
+            State
+          </label>
+          <select
+            name="state"
+            id="state"
+            value={contact.state}
+            className="border border-gray-400 rounded p-1"
+            onChange={handleChange}
+            required
+          >
             <option value="">Choose...</option>
             <option value="Solid">Solid</option>
             <option value="Liquid">Liquid</option>
@@ -106,31 +164,37 @@ export default function ReactForm() {
           </select>
         </div>
 
-        <div>
-          <label htmlFor="zip">Pin/Zip</label>
+        <div className="my-2">
+          <label className="mx-4" htmlFor="zip">
+            Pin/Zip
+          </label>
           <input
-            onChange={handleChange}
             type="number"
             name="zip"
             id="zip"
-            placeholder="Enter your zip/pin code"
+            value={contact.zip}
+            placeholder="Enter Zip/Pin Code"
+            className="border border-gray-400 rounded p-1"
+            onChange={handleChange}
             required
           />
         </div>
 
-        <div>
+        <div className="my-2">
           <input
-            onChange={handleChange}
             type="checkbox"
             name="agree"
             id="agree"
-            placeholder="Enter your email"
+            checked={contact.agree}
+            className="mx-4"
+            onChange={handleChange}
             required
           />
-          <label htmlFor="agree">Say, you are agreed.</label>
+          <label htmlFor="agree">Say, You Agree!</label>
         </div>
       </form>
-      ;
     </div>
   );
-}
+};
+
+export default App;
