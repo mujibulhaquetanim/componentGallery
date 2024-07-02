@@ -4,8 +4,9 @@
 // import ReactForm from "./components/Form/ReactForm";
 // import SelectionPage from "./components/MultipleTagSelection/SelectionPage";
 // import ProfileCard from "./components/SingleComponents/ProfileCard";
+import ReactForm from "./components/Form/ReactForm";
 // import ReactHookForm from "./components/Form/ReactHookForm";
-import ProgressBar from "./components/SingleComponents/ProgressBar";
+// import ProgressBar from "./components/SingleComponents/ProgressBar";
 
 
 function App() {
@@ -18,8 +19,9 @@ function App() {
       {/* <ReactForm/> */}
       {/* <ProfileCard/> */}
       {/* <ReactHookForm/> */}
-      <span className="flex justify-center w-full items-center m-2 font-bold text-2xl">progress bar</span>
-      <ProgressBar value={25}/>
+      <ReactForm/>
+      {/* <span className="flex justify-center w-full items-center m-2 font-bold text-2xl">progress bar</span>
+      <ProgressBar value={25}/> */}
     </div>
   );
 }
