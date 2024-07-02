@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import DummyText from "../SingleComponents/DummyText";
 
 function ScrollingProgress() {
   const [scroll, setScroll] = useState<number>(0);
@@ -22,19 +23,23 @@ function ScrollingProgress() {
   });
 
   return (
-    <div className="w-full fixed top-0">
-      <div className="h-2 w-full">
-        <div
-          className="h-full bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%"
-          style={{ width: `${scroll}%` }}
-        ></div>
-      </div>
+    <div>
+      <div className="w-full fixed top-0">
+        <div className="h-2 w-full">
+          <div
+            className="h-full bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%"
+            style={{ width: `${scroll}%` }}
+          ></div>
+        </div>
 
-      <div className="font-bold">
-        <div className="flex justify-end p-1 text-white">
-          Scroll Value = {scroll}%
+        <div className="font-bold">
+          <div className="flex justify-end p-1 text-white">
+            Scroll Value = {scroll}%
+          </div>
         </div>
       </div>
+
+      <DummyText />
     </div>
   );
 }
