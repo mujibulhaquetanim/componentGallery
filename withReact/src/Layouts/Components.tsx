@@ -2,8 +2,8 @@ import { Outlet, Link } from "react-router-dom";
 
 function Components() {
   return (
-    <div className="h-screen">
-      <div className="p-2 flex justify-center items-center gap-2 flex-wrap ">
+    <div>
+      <nav className="p-2 flex justify-center items-center gap-2 flex-wrap sticky top-0 shadow-md">
         <div className="text-xl rounded-2xl inline-block font-bold border-2 p-3 bg-slate-400 hover:bg-green-900 hover:scale-105 transform duration-300">
           <Link to="/reactForm">React Form</Link>
         </div>
@@ -31,7 +31,7 @@ function Components() {
         <div className="text-xl rounded-2xl inline-block font-bold border-2 p-3 bg-slate-400 hover:bg-green-900 hover:scale-105 transform duration-300">
           <Link to="/dragAndDrop">Drag and Drop</Link>
         </div>
-      </div>
+      </nav>
       <Outlet />
     </div>
   );
