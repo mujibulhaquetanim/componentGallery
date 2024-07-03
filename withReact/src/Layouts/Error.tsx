@@ -10,15 +10,24 @@ function ErrorPage() {
       setCountdown((prevCount) => prevCount - 1);
     }, 1000);
 
-    const redirect = setTimeout(() => {
+    if (countdown === 0) {
       navigate("/");
-    }, 5000);
+    }
+
+    // const redirect = setTimeout(() => {
+    //   navigate('/');
+    // }, 5000);
+    
+    //another way to do it:
+    // setTimeout(() => {
+    //   window.location.href = "/";
+    // }, 3000);
 
     return () => {
       clearInterval(timer);
-      clearTimeout(redirect);
+      // clearTimeout(redirect);
     };
-  }, [navigate]);
+  }, [navigate, countdown]);
 
   return (
     <div>
