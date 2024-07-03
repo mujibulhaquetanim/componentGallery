@@ -3,7 +3,8 @@ import { useState } from "react";
 export default function ToggleShape() {
   const [circle, setCircle] = useState<boolean>(false);
   return (
-    <div className="flex justify-center items-center mt-4 h-screen">
+    <div className="flex flex-col justify-center items-center mt-4 h-screen gap-2">
+      <div className="">
       <div
         className={
           circle
@@ -11,7 +12,8 @@ export default function ToggleShape() {
             : "bg-green-950 w-96 h-72"
         }
       ></div>
-      <button onClick={() => setCircle(!circle)} className="p-4 border-2 m-4">Change Shape</button>
+      </div>
+      <button onClick={() => setCircle(!circle)} className="p-2 border-2 rounded-xl m-4">Change Shape</button>
     </div>
   );
 }

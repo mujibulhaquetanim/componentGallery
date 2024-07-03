@@ -38,7 +38,7 @@ function ScrollingProgress() {
           </div>
         </div>
       </div>
-
+      <div className="absolute top-1/2 left-96 text-white ">Scroll Down 👇🏼 to See the Effect</div>
       <DummyText />
     </div>
   );

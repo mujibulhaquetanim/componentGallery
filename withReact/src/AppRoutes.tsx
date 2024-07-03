@@ -7,6 +7,7 @@ import ProfileCard from "./components/SingleComponents/ProfileCard";
 import ReactForm from "./components/Form/ReactForm";
 import ReactHookForm from "./components/Form/ReactHookForm";
 import { createBrowserRouter } from "react-router-dom";
+import ToggleShape from "./components/SingleComponents/ToggleShape"
 // import ProgressBar from "./components/SingleComponents/ProgressBar";
 
 export const route = createBrowserRouter([
@@ -20,6 +21,7 @@ export const route = createBrowserRouter([
       { path: "profileCard", element: <ProfileCard /> },
       { path: "reactForm", element: <ReactForm /> },
       { path: "reactHookForm", element: <ReactHookForm /> },
+      { path: "toggleShape", element: <ToggleShape /> },
       // { path: "progressBar", element: <ProgressBar /> },
     ],
   },
