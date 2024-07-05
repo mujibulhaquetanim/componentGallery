@@ -1,4 +1,5 @@
 import { useForm, SubmitHandler } from "react-hook-form";
+import { Link } from "react-router-dom";
 
 type formFields = {
   email: string;
@@ -32,7 +33,8 @@ export default function LogInReactHookForm() {
   };
 
   return (
-    <form
+    <div className="grid place-items-center h-screen">
+          <form
       className="gap-2 flex flex-col justify-center items-center m-3"
       onSubmit={handleSubmit(onSubmit)}
     >
@@ -79,5 +81,7 @@ export default function LogInReactHookForm() {
       like email already registered, so that we root is used */}
       {errors.root && <div className="text-red-500">{errors.root.message}</div>}
     </form>
+    <div>Have an account? <span className="hover:underline cursor-pointer hover:font-bold hover:border-2 p-2 rounded-lg"><Link to="/reactForm">Sign In</Link></span></div>
+    </div>
   );
 }
