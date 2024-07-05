@@ -5,9 +5,10 @@ import ScrollingProgress from "./components/Scroll/ScrollingProgress";
 import SelectionPage from "./components/MultipleTagSelection/SelectionPage";
 import ProfileCard from "./components/SingleComponents/ProfileCard";
 import ReactForm from "./components/Form/ReactForm";
-import ReactHookForm from "./components/Form/ReactHookForm";
+import LogInReactHookForm from "./components/Form/LogInReactHookForm";
 import { createBrowserRouter } from "react-router-dom";
-import ToggleShape from "./components/SingleComponents/ToggleShape"
+import ToggleShape from "./components/SingleComponents/ToggleShape";
+import ProtectedRoutes from "./components/Private Routes/ProtectedRoutes";
 // import ProgressBar from "./components/SingleComponents/ProgressBar";
 
 export const route = createBrowserRouter([
@@ -20,8 +21,16 @@ export const route = createBrowserRouter([
       { path: "selectionPage", element: <SelectionPage /> },
       { path: "profileCard", element: <ProfileCard /> },
       { path: "reactForm", element: <ReactForm /> },
-      { path: "reactHookForm", element: <ReactHookForm /> },
+      { path: "reactHookForm", element: <LogInReactHookForm /> },
       { path: "toggleShape", element: <ToggleShape /> },
+      {
+        path: "dashboard",
+        element: <ProtectedRoutes />,
+        children: [
+          { path: "user/Profile", element: <ProfileCard /> },
+          { path: "user/orders", element: <ScrollingProgress /> },
+        ],
+      },
       // { path: "progressBar", element: <ProgressBar /> },
     ],
   },

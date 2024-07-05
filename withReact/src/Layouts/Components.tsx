@@ -31,6 +31,10 @@ function Components() {
         <div className="text-xl rounded-2xl inline-block font-bold border-2 p-3 bg-slate-400 hover:bg-green-900 hover:scale-105 transform duration-300">
           <Link to="/dragAndDrop">Drag and Drop</Link>
         </div>
+
+        <div className="text-xl rounded-2xl inline-block font-bold border-2 p-3 bg-slate-400 hover:bg-green-900 hover:scale-105 transform duration-300">
+          <Link to="/dashboard">Dashboard</Link>
+        </div>
       </nav>
       <Outlet />
     </div>
