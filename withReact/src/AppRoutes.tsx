@@ -9,7 +9,7 @@ import {LogInReactHookForm} from "./components/Form/LogInReactHookForm";
 import { createBrowserRouter } from "react-router-dom";
 import ToggleShape from "./components/SingleComponents/ToggleShape";
 import ProtectedRoutes from "./components/Private Routes/ProtectedRoutes";
-// import ProgressBar from "./components/SingleComponents/ProgressBar";
+import {ProgressBar} from "./components/SingleComponents/ProgressBar";
 
 export const route = createBrowserRouter([
   {
@@ -31,7 +31,7 @@ export const route = createBrowserRouter([
           { path: "user/orders", element: <ScrollingProgress /> },
         ],
       },
-      // { path: "progressBar", element: <ProgressBar /> },
+      { path: "progressBar", element: <ProgressBar /> },
     ],
   },
   {
