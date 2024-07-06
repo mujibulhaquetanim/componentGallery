@@ -1,11 +1,11 @@
 import Components from "./Layouts/Components";
 import ErrorPage from "./Layouts/Error";
-import DragAndDrop from "./components/SingleComponents/DragAndDrop";
+import {DragAndDrop} from "./components/SingleComponents/DragAndDrop";
 import ScrollingProgress from "./components/Scroll/ScrollingProgress";
 import SelectionPage from "./components/MultipleTagSelection/SelectionPage";
-import ProfileCard from "./components/SingleComponents/ProfileCard";
+import {ProfileCard} from "./components/SingleComponents/ProfileCard";
 import ReactForm from "./components/Form/ReactForm";
-import LogInReactHookForm from "./components/Form/LogInReactHookForm";
+import {LogInReactHookForm} from "./components/Form/LogInReactHookForm";
 import { createBrowserRouter } from "react-router-dom";
 import ToggleShape from "./components/SingleComponents/ToggleShape";
 import ProtectedRoutes from "./components/Private Routes/ProtectedRoutes";

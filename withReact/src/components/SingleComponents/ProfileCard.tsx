@@ -1,12 +1,12 @@
+import React from "react";
 import profilePic from "../../assets/profilePic.png";
 
-export default function ProfileCard() {
+export const ProfileCard: React.FC = function () {
   return (
     <div className="h-screen grid place-items-center">
       <div className="upc m-3 grid place-items-center border-2 p-3 w-1/3">
-        <div className="bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% w-full h-20"></div>
-
-        <div className="Profile-down p-3">
+        <div>
+          <div className="bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% w-full h-20"></div>
           <div className="image flex justify-center">
             <img
               className="w-36 h-36 rounded-full"
@@ -14,6 +14,9 @@ export default function ProfileCard() {
               alt="Profile Picture"
             />
           </div>
+        </div>
+
+        <div className="Profile-down p-3">
           <div className="ProfileTitle justify-center flex text-3xl font-bold">
             Mohammed Hijab
           </div>
@@ -31,4 +34,4 @@ export default function ProfileCard() {
       </div>
     </div>
   );
-}
+};
