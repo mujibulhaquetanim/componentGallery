@@ -12,7 +12,7 @@ interface Contact {
   agree: boolean;
 }
 
-const App: React.FC = () => {
+const ControlledSignUpForm: React.FC = () => {
   const [contact, setContact] = useState<Contact>({
     fname: "",
     email: "",
@@ -237,4 +237,4 @@ const App: React.FC = () => {
   );
 };
 
-export default App;
+export default ControlledSignUpForm;
