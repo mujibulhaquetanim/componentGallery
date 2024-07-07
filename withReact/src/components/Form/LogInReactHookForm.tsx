@@ -1,5 +1,5 @@
 import React from "react";
-import { useForm, SubmitHandler} from "react-hook-form";
+import { useForm, SubmitHandler } from "react-hook-form";
 import { Link } from "react-router-dom";
 
 // Define form fields type
@@ -25,7 +25,7 @@ export const LogInReactHookForm: React.FC = () => {
       await new Promise((resolve) => {
         setTimeout(resolve, 1000);
       });
-      throw new Error(); 
+      throw new Error();
       console.log(data);
     } catch (error) {
       setError("email", {
@@ -82,7 +82,7 @@ export const LogInReactHookForm: React.FC = () => {
         <div className="flex justify-center items-center gap-2">
           Have an account?{" "}
           <span className="hover:underline cursor-pointer hover:font-bold hover:border-2 p-2 rounded-lg">
-            <Link to="/reactForm">Sign In</Link>
+            <Link to="/signup">Sign In</Link>
           </span>
         </div>
       </div>
