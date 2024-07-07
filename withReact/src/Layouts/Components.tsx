@@ -5,7 +5,7 @@ function Components() {
     <div>
       <nav className="p-2 flex justify-center items-center gap-2 flex-wrap sticky top-0 shadow-md">
         <div className="text-xl rounded-2xl inline-block font-bold border-2 p-3 bg-slate-400 hover:bg-green-900 hover:scale-105 transform duration-300">
-          <Link to="/reactForm">React Form</Link>
+          <Link to="/signup">SignUp-Dynamic</Link>
         </div>
 
         <div className="text-xl rounded-2xl inline-block font-bold border-2 p-3 bg-slate-400 hover:bg-green-900 hover:scale-105 transform duration-300">
@@ -21,7 +21,7 @@ function Components() {
         </div>
 
         <div className="text-xl rounded-2xl inline-block font-bold border-2 p-3 bg-slate-400 hover:bg-green-900 hover:scale-105 transform duration-300">
-          <Link to="/reactHookForm">React Hook Form</Link>
+          <Link to="/login">LogIn-React Hook Form</Link>
         </div>
 
         <div className="text-xl rounded-2xl inline-block font-bold border-2 p-3 bg-slate-400 hover:bg-green-900 hover:scale-105 transform duration-300">
@@ -34,6 +34,10 @@ function Components() {
 
         <div className="text-xl rounded-2xl inline-block font-bold border-2 p-3 bg-slate-400 hover:bg-green-900 hover:scale-105 transform duration-300">
           <Link to="/dashboard">Dashboard</Link>
+        </div>
+
+        <div className="text-xl rounded-2xl inline-block font-bold border-2 p-3 bg-slate-400 hover:bg-green-900 hover:scale-105 transform duration-300">
+          <Link to="/progressBar">Progress Bar</Link>
         </div>
       </nav>
       <Outlet />

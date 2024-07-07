@@ -1,7 +1,7 @@
 import React from "react";
 
 interface data {
-  value: number;
+  value?  : number;
 }
 
 export const ProgressBar: React.FC<data> = ({ value = 0 }: data) => {

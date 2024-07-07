@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import DummyText from "../SingleComponents/DummyText";
 
-function ScrollingProgress() {
+const ScrollingProgress: React.FC = function () {
   const [scroll, setScroll] = useState<number>(0);
 
   useEffect(() => {
@@ -38,10 +38,12 @@ function ScrollingProgress() {
           </div>
         </div>
       </div>
-      <div className="absolute top-1/2 left-96 text-white ">Scroll Down 👇🏼 to See the Effect</div>
+      <div className="absolute top-1/2 left-96 text-white ">
+        Scroll Down 👇🏼 to See the Effect
+      </div>
       <DummyText />
     </div>
   );
-}
+};
 
 export default ScrollingProgress;
