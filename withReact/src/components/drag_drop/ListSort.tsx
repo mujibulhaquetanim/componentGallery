@@ -12,7 +12,11 @@ const ListSort: React.FC = function () {
   const dragPerson = useRef<number>(0);
   const dragOverPerson = useRef<number>(0);
   function handleSort() {
-
+    const peopleclone = [...people];
+    const temp = peopleclone[dragPerson["current"]];
+    peopleclone[dragPerson["current"]] = peopleclone[dragOverPerson["current"]];
+    peopleclone[dragOverPerson["current"]] = temp;
+    setPeople(peopleclone);
   }
   return (
     <main className="grid place-items-center min-h-max space-y-4">
