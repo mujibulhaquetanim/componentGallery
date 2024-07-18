@@ -4,13 +4,14 @@ import ErrorPage from "./Layouts/Error";
 
 import { DragAndDrop } from "./components/SingleComponents/DragAndDrop";
 import ScrollingProgress from "./components/Scroll/ScrollingProgress";
-import {SelectionPage} from "./components/MultipleTagSelection/SelectionPage";
+import { SelectionPage } from "./components/MultipleTagSelection/SelectionPage";
 import { ProfileCard } from "./components/SingleComponents/ProfileCard";
 import ControlledSignUpForm from "./components/Form/ControlledSignUpForm";
 import { LogInReactHookForm } from "./components/Form/LogInReactHookForm";
-import {ToggleShape} from "./components/SingleComponents/ToggleShape";
+import { ToggleShape } from "./components/SingleComponents/ToggleShape";
 import ProtectedRoutes from "./components/Private Routes/ProtectedRoutes";
 import { ProgressBar } from "./components/SingleComponents/ProgressBar";
+import ListSort from "./components/drag_drop/ListSort";
 
 export const route = createBrowserRouter([
   {
@@ -23,6 +24,7 @@ export const route = createBrowserRouter([
       { path: "profileCard", element: <ProfileCard /> },
       { path: "signup", element: <ControlledSignUpForm /> },
       { path: "login", element: <LogInReactHookForm /> },
+      { path: "drag-drop", element: <ListSort /> },
       { path: "toggleShape", element: <ToggleShape /> },
       {
         path: "dashboard",
