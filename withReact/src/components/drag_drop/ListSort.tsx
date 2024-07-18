@@ -13,9 +13,11 @@ const ListSort: React.FC = function () {
   const dragOverPerson = useRef<number>(0);
   function handleSort() {
     const peopleclone = [...people];
+
     const temp = peopleclone[dragPerson["current"]];
     peopleclone[dragPerson["current"]] = peopleclone[dragOverPerson["current"]];
     peopleclone[dragOverPerson["current"]] = temp;
+
     setPeople(peopleclone);
   }
   return (

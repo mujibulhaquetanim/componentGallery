@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Components from "./Layouts/Components";
 import ErrorPage from "./Layouts/Error";
 
-import { DragAndDrop } from "./components/SingleComponents/DragAndDrop";
+import { DragAndDrop } from "./components/drag_drop/DragAndDrop";
 import ScrollingProgress from "./components/Scroll/ScrollingProgress";
 import { SelectionPage } from "./components/MultipleTagSelection/SelectionPage";
 import { ProfileCard } from "./components/SingleComponents/ProfileCard";
