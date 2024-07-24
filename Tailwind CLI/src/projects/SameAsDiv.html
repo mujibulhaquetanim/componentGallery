@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../output/style.css" />
+    <title>Same as Div</title>
+  </head>
+  <body class="bg-gray-100 h-screen flex items-center justify-center gap-3">
+    <!-- width and height auto -->
+    <div
+      class="w-[10%] rounded-md flex flex-col items-center bg-slate-700 border-2 border-green-700 shadow-md font-bold text-white"
+    >
+      <h1 class="underline m-3">Religious Book</h1>
+      <div class="w-32">
+        <img
+          src="../../public/videoPoster.jpg"
+          alt="image in diff. size than div"
+          class="w-auto h-auto rounded-xl"
+        />
+      </div>
+      <p class="text-center m-3">Quran</p>
+    </div>
+
+    <!-- object properties works on fixed width and height image -->
+    <div
+      class="w-[10%] rounded-md flex flex-col items-center bg-slate-700 border-2 border-green-700 shadow-md font-bold text-white"
+    >
+      <h1 class="underline m-3">Religious Book</h1>
+      <div class="w-32">
+        <img
+          src="../../public/videoPoster.jpg"
+          alt="image in diff. size than div"
+          class="w-32 h-32 rounded-xl object-cover"
+        />
+      </div>
+      <p class="text-center m-3">Quran</p>
+    </div>
+  </body>
+</html>
