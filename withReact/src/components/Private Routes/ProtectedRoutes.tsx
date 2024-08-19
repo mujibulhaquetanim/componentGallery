@@ -4,7 +4,7 @@ import React from "react";
 const SubNavBar: React.FC = () => {
   return (
     <div>
-      <div className="flex gap-3 m-1 justify-center shadow-md p-2">
+      <div className="flex gap-3 m-1 justify-center shadow-md p-2 overflow-hidden">
         <Link className="border-2 p-2 rounded-md" to="user/profile">
           Profile
         </Link>
@@ -21,6 +21,19 @@ const SubNavBar: React.FC = () => {
               <p className="cursor-pointer text-black">LogOut</p>
             </div>
           </div>
+        </div>
+
+        <div className="border-2 p-2 rounded-md group relative cursor-pointer">
+          <p>Menu</p>
+          <div className="cursor-pointer absolute top-10 -right-7 hover:block hidden">
+            <div className="flex flex-col gap-2 w-36 py-3 px-5 bg-slate-200 text-slate-500">
+            <p className="text-black">resize the window to see hamburger menu</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="cursor-pointer sm:hidden">
+          <p className="rotate-90 text-5xl">⫴</p>
         </div>
       </div>
       <Outlet />
