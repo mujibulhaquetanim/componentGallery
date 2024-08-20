@@ -27,7 +27,9 @@ const SubNavBar: React.FC = () => {
           <p className="rotate-90 text-xl m-auto">⫴</p>
           <div className="cursor-pointer absolute bottom-10 -right-16 rounded-xl border-2 group-hover:block hidden">
             <div className="flex flex-col gap-2 w-36 py-3 px-5 bg-slate-200 text-slate-500">
-            <p className="text-black">resize the window to see hamburger menu</p>
+              <p className="text-black">
+                resize the window to see hamburger menu
+              </p>
             </div>
           </div>
         </div>

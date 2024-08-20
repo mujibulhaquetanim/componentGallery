@@ -12,6 +12,7 @@ import { ToggleShape } from "./components/SingleComponents/ToggleShape";
 import ProtectedRoutes from "./components/Private Routes/ProtectedRoutes";
 import { ProgressBar } from "./components/SingleComponents/ProgressBar";
 import ListSort from "./components/drag_drop/ListSort";
+import RatingStars from "./components/SingleComponents/RatingStars";
 
 export const route = createBrowserRouter([
   {
@@ -26,6 +27,7 @@ export const route = createBrowserRouter([
       { path: "login", element: <LogInReactHookForm /> },
       { path: "drag-drop", element: <ListSort /> },
       { path: "toggleShape", element: <ToggleShape /> },
+      { path: "ratingStars", element: <RatingStars /> },
       {
         path: "dashboard",
         element: <ProtectedRoutes />,
