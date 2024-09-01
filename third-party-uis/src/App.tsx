@@ -4,6 +4,7 @@ import Toastify from "./Toastify/Toastify";
 import AnimationAOS from "./aos/AnimationAOS";
 import RangeCalendarComponent from "./NextUI/RangeCalendar";
 import TooltipComponent from "./NextUI/TooltipComponent";
+import SnippetComponent from "./NextUI/SnippetComponent";
 const App: React.FC = function () {
   return (
     <>
@@ -12,6 +13,7 @@ const App: React.FC = function () {
       <AnimationAOS/>
       <RangeCalendarComponent />
       <TooltipComponent/>
+      <SnippetComponent/>
     </>
   );
 };
