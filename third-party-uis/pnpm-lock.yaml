@@ -14,6 +14,9 @@ importers:
       '@nextui-org/calendar':
         specifier: ^2.0.11
         version: 2.0.11(@nextui-org/system@2.2.5(@nextui-org/theme@2.2.9(tailwindcss@3.4.10))(framer-motion@11.3.31(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@nextui-org/theme@2.2.9(tailwindcss@3.4.10))(framer-motion@11.3.31(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@nextui-org/card':
+        specifier: ^2.0.33
+        version: 2.0.33(@nextui-org/system@2.2.5(@nextui-org/theme@2.2.9(tailwindcss@3.4.10))(framer-motion@11.3.31(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@nextui-org/theme@2.2.9(tailwindcss@3.4.10))(framer-motion@11.3.31(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@nextui-org/popover':
         specifier: ^2.1.27
         version: 2.1.27(@nextui-org/system@2.2.5(@nextui-org/theme@2.2.9(tailwindcss@3.4.10))(framer-motion@11.3.31(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@nextui-org/theme@2.2.9(tailwindcss@3.4.10))(@types/react@18.3.5)(framer-motion@11.3.31(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -4217,7 +4220,7 @@ snapshots:
       '@react-aria/label': 3.7.11(react@18.3.1)
       '@react-aria/utils': 3.25.2(react@18.3.1)
       '@react-stately/form': 3.0.5(react@18.3.1)
-      '@react-stately/utils': 3.10.1(react@18.3.1)
+      '@react-stately/utils': 3.10.3(react@18.3.1)
       '@react-types/shared': 3.24.1(react@18.3.1)
       '@react-types/textfield': 3.9.3(react@18.3.1)
       '@swc/helpers': 0.5.12
