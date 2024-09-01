@@ -3,6 +3,7 @@ import "./App.css";
 import Toastify from "./Toastify/Toastify";
 import AnimationAOS from "./aos/AnimationAOS";
 import RangeCalendarComponent from "./NextUI/RangeCalendar";
+import TooltipComponent from "./NextUI/TooltipComponent";
 const App: React.FC = function () {
   return (
     <>
@@ -10,6 +11,7 @@ const App: React.FC = function () {
       <Toastify />
       <AnimationAOS/>
       <RangeCalendarComponent />
+      <TooltipComponent/>
     </>
   );
 };

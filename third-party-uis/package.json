@@ -13,6 +13,7 @@
     "@internationalized/date": "^3.5.5",
     "@nextui-org/calendar": "^2.0.11",
     "@nextui-org/react": "^2.4.6",
+    "@nextui-org/tooltip": "^2.0.39",
     "aos": "3.0.0-beta.6",
     "framer-motion": "^11.3.31",
     "lottie-react": "^2.4.0",
