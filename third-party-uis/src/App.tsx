@@ -6,16 +6,18 @@ import RangeCalendarComponent from "./NextUI/RangeCalendar";
 import TooltipComponent from "./NextUI/TooltipComponent";
 import SnippetComponent from "./NextUI/SnippetComponent";
 import CardComponent from "./NextUI/CardComponent";
+import TextPluginComponent from "./Gsap/TextPluginComponent";
 const App: React.FC = function () {
   return (
     <>
       <h1>Welcome to Third Party UIs</h1>
       <Toastify />
-      <AnimationAOS/>
+      <AnimationAOS />
       <RangeCalendarComponent />
-      <TooltipComponent/>
-      <SnippetComponent/>
-      <CardComponent/>
+      <TooltipComponent />
+      <SnippetComponent />
+      <CardComponent />
+      <TextPluginComponent />
     </>
   );
 };
