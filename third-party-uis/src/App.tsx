@@ -8,6 +8,7 @@ import SnippetComponent from "./NextUI/SnippetComponent";
 import CardComponent from "./NextUI/CardComponent";
 import TextPluginComponent from "./Gsap/TextPluginComponent";
 import SlidesPerView from "./swiper/SlidesPerView";
+import Freemode from "./swiper/FreeMode";
 const App: React.FC = function () {
   return (
     <>
@@ -20,6 +21,7 @@ const App: React.FC = function () {
       <CardComponent />
       <TextPluginComponent />
       <SlidesPerView />
+      <Freemode />
     </>
   );
 };
