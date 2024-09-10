@@ -9,6 +9,7 @@ import CardComponent from "./NextUI/CardComponent";
 import TextPluginComponent from "./Gsap/TextPluginComponent";
 import SlidesPerView from "./swiper/SlidesPerView";
 import Freemode from "./swiper/FreeMode";
+import SlidesPerGroup from "./swiper/SlidesPerGroup";
 const App: React.FC = function () {
   return (
     <>
@@ -22,6 +23,7 @@ const App: React.FC = function () {
       <TextPluginComponent />
       <SlidesPerView />
       <Freemode />
+      <SlidesPerGroup/>
     </>
   );
 };
