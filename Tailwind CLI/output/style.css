@@ -853,6 +853,26 @@ video {
        columns: 3;
 }
 
+.columns-xs {
+  -moz-columns: 20rem;
+       columns: 20rem;
+}
+
+.columns-auto {
+  -moz-columns: auto;
+       columns: auto;
+}
+
+.columns-3xs {
+  -moz-columns: 16rem;
+       columns: 16rem;
+}
+
+.columns-lg {
+  -moz-columns: 32rem;
+       columns: 32rem;
+}
+
 .grid-flow-col {
   grid-auto-flow: column;
 }
