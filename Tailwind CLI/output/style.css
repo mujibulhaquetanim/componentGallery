@@ -873,6 +873,26 @@ video {
        columns: 32rem;
 }
 
+.columns-\[\] {
+  -moz-columns: ;
+       columns: ;
+}
+
+.columns-\[300px\] {
+  -moz-columns: 300px;
+       columns: 300px;
+}
+
+.columns-2 {
+  -moz-columns: 2;
+       columns: 2;
+}
+
+.columns-xl {
+  -moz-columns: 36rem;
+       columns: 36rem;
+}
+
 .grid-flow-col {
   grid-auto-flow: column;
 }
@@ -943,6 +963,12 @@ video {
   --tw-space-y-reverse: 0;
   margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(0.75rem * var(--tw-space-y-reverse));
+}
+
+.space-y-7 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1.75rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1.75rem * var(--tw-space-y-reverse));
 }
 
 .overflow-hidden {
