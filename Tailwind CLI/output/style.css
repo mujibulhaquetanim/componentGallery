@@ -606,6 +606,10 @@ video {
   margin: 1.5rem;
 }
 
+.m-7 {
+  margin: 1.75rem;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -614,6 +618,10 @@ video {
 .my-4 {
   margin-top: 1rem;
   margin-bottom: 1rem;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
 }
 
 .mb-4 {
@@ -642,10 +650,6 @@ video {
 
 .mt-5 {
   margin-top: 1.25rem;
-}
-
-.mb-2 {
-  margin-bottom: 0.5rem;
 }
 
 .box-border {
@@ -848,49 +852,14 @@ video {
   cursor: pointer;
 }
 
-.columns-3 {
-  -moz-columns: 3;
-       columns: 3;
-}
-
-.columns-xs {
-  -moz-columns: 20rem;
-       columns: 20rem;
-}
-
-.columns-auto {
-  -moz-columns: auto;
-       columns: auto;
-}
-
-.columns-3xs {
-  -moz-columns: 16rem;
-       columns: 16rem;
-}
-
-.columns-lg {
-  -moz-columns: 32rem;
-       columns: 32rem;
-}
-
-.columns-\[\] {
-  -moz-columns: ;
-       columns: ;
-}
-
 .columns-\[300px\] {
   -moz-columns: 300px;
        columns: 300px;
 }
 
-.columns-2 {
-  -moz-columns: 2;
-       columns: 2;
-}
-
-.columns-xl {
-  -moz-columns: 36rem;
-       columns: 36rem;
+.columns-lg {
+  -moz-columns: 32rem;
+       columns: 32rem;
 }
 
 .grid-flow-col {
@@ -907,10 +876,6 @@ video {
 
 .flex-col {
   flex-direction: column;
-}
-
-.flex-wrap {
-  flex-wrap: wrap;
 }
 
 .place-content-center {
