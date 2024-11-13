@@ -9,6 +9,7 @@ function TextPluginComponent() {
   const text = useRef(null);
   const basicText = useRef(null);
   const countDiv = useRef(null);
+  const similarRef = useRef(null);
   const [count, setCount] = useState(0);
 
   useGSAP(() => {
@@ -42,8 +43,17 @@ function TextPluginComponent() {
         delay: 2,
         color: "black",
       });
+
+      gsap.to(".similarClass", {
+        x: 100,
+        y: 70 + count,
+        ease: "bounce",
+        duration: 3,
+        delay: 2,
+        color: "black",
+      });
     },
-    { dependencies: [count] }
+    { dependencies: [count], scope: similarRef, revertOnUpdate: true }
   );
 
   return (
@@ -52,6 +62,10 @@ function TextPluginComponent() {
       <h1 className="basicText mt-3" ref={text}>
         TextPlugin
       </h1>
+      <div ref={similarRef}>
+        <div className="similarClass"></div>
+      </div>
+      <div className="similarClass"></div>
 
       <h1 className="basicText mt-3" ref={basicText}>
         Basic Text
