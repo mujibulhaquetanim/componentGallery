@@ -2,6 +2,8 @@
 
 Welcome to the Component Gallery repository! This repository contains a collection of various UI components and layouts built using different technologies. The repository is organized into three main directories: `tailwind-cli`, `third-party-uis`, and `with-react`.
 
+- If you are focused exclusively on comprehensive projects, you might consider exploring the following options: [Project repository](https://github.com/mujibulhaquetanim/Frontend-Functionalities.git): 
+
 ## Directories
 
 ### 1. tailwind-cli
@@ -43,12 +45,13 @@ This directory contains components and layouts built using React.
 - **Scroll**: Components for handling scroll events.
 - **SingleComponents**: Individual React components.
 - **drag_drop**: Components for drag and drop functionality.
+  <br>
+**And Many more...**
 
 ## Getting Started
 
 To get started with this repository, clone it to your local machine:
 
-    ```bash
-    git clone https://github.com/yourusername/component-gallery.git
+       git clone https://github.com/yourusername/component-gallery.git
 
 Navigate to the directory of your choice and explore the components and layouts.
