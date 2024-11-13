@@ -1,3 +1,4 @@
+import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { TextPlugin } from "gsap/TextPlugin";
 import { useRef } from "react";
@@ -8,22 +9,26 @@ function TextPluginComponent() {
   const text = useRef(null);
   const basicText = useRef(null);
 
-  gsap.to(text.current, {
-    text: "TextPlugin is here",
-    duration: 2,
-    repeat: -1,
-    yoyo: true,
-    ease: "sine.in",
-  });
+  useGSAP(() => {
+    gsap.to(text.current, {
+      text: "TextPlugin is here",
+      duration: 2,
+      repeat: -1,
+      yoyo: true,
+      ease: "sine.in",
+      backgroundColor: "red",
+    });
 
-  gsap.to(basicText.current, {
-    text: "Sample Text",
-    duration: 5,
-    repeat: -1,
-    yoyo: true,
-    ease: "bounce.inOut",
-    delay: 1,
-  });
+    gsap.to(basicText.current, {
+      text: "Sample Text",
+      duration: 5,
+      repeat: -1,
+      yoyo: true,
+      ease: "bounce.inOut",
+      delay: 1,
+      backgroundColor: "green",
+    });
+  }, [text, basicText]);
 
   return (
     <div>
