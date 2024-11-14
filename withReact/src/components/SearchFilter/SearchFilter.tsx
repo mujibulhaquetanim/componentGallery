@@ -1,12 +1,17 @@
 import { dummyData } from "./dummyData";
 import Table from "react-bootstrap/Table";
-import { Container } from "react-bootstrap";
-import { Form } from "react-bootstrap";
+import { Container, Form } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useState } from "react";
 
 export default function SearchFilter() {
   const [search, setSearch] = useState("");
+
+  // Filter data based on the search input
+  const filteredData = dummyData.filter((item) =>
+    item.first_name.toLowerCase().includes(search.toLowerCase())
+  );
+
   return (
     <Container>
       <h1 className="text-3xl font-bold text-center mt-1">Search Filter</h1>
@@ -31,22 +36,20 @@ export default function SearchFilter() {
           </tr>
         </thead>
         <tbody>
-          {dummyData
-            .filter((item) =>
-              item.first_name === ""
-                ? item
-                : item.first_name.toLowerCase().includes(search)
-            )
-            .map((item) => {
-              return (
-                <tr key={item.id}>
-                  <td>{item.first_name}</td>
-                  <td>{item.last_name}</td>
-                  <td>{item.email}</td>
-                  <td>{item.gender}</td>
-                </tr>
-              );
-            })}
+          {filteredData.length > 0 ? (
+            filteredData.map((item) => (
+              <tr key={item.id}>
+                <td>{item.first_name}</td>
+                <td>{item.last_name}</td>
+                <td>{item.email}</td>
+                <td>{item.gender}</td>
+              </tr>
+            ))
+          ) : (
+            <tr>
+              <td colSpan={4}>"{search}" doesn't exist</td>
+            </tr>
+          )}
         </tbody>
       </Table>
     </Container>
