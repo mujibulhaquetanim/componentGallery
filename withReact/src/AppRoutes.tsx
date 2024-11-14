@@ -13,6 +13,7 @@ import ProtectedRoutes from "./components/Private Routes/ProtectedRoutes";
 import { ProgressBar } from "./components/SingleComponents/ProgressBar";
 import ListSort from "./components/drag_drop/ListSort";
 import RatingStars from "./components/SingleComponents/RatingStars";
+import SearchFilter from "./components/SearchFilter/SearchFilter";
 
 export const route = createBrowserRouter([
   {
@@ -37,6 +38,7 @@ export const route = createBrowserRouter([
         ],
       },
       { path: "progressBar", element: <ProgressBar /> },
+      { path: "searchfilter", element: <SearchFilter /> },
     ],
   },
   {
