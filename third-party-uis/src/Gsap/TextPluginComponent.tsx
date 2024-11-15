@@ -71,7 +71,7 @@ function TextPluginComponent() {
         Basic Text
       </h1>
 
-      <button onClick={() => setCount((prev) => prev + 50)}>Increment</button>
+      <button onClick={() => setCount((prev) => prev + 50)} className="mt-3 animate-pulse">Press Me to See the gsap magic</button>
     </div>
   );
 }

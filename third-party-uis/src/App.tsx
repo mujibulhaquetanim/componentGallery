@@ -10,10 +10,12 @@ import TextPluginComponent from "./Gsap/TextPluginComponent";
 import SlidesPerView from "./swiper/SlidesPerView";
 import Freemode from "./swiper/FreeMode";
 import SlidesPerGroup from "./swiper/SlidesPerGroup";
+import FramerMotion from "./framer-motion/FramerMotion";
 const App: React.FC = function () {
   return (
     <>
       <h1>Welcome to Third Party UIs</h1>
+      <FramerMotion/>
       <Toastify />
       <AnimationAOS />
       <RangeCalendarComponent />
