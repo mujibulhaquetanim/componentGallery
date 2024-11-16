@@ -51,7 +51,14 @@ export default function FramerMotion() {
         <motion.div
           variants={gridSquareVariants}
           className="bg-slate-800 aspect-square rounded-md flex justify-center items-center gap-10"
-        ></motion.div>
+        >
+          <motion.div
+            className="w-1/3 h-1/3 bg-rose-400 cursor-grab rounded-md"
+            drag
+            dragConstraints={{ top: -100, right: 100, bottom: 100, left: -100 }}
+            dragTransition={{bounceStiffness: 600, bounceDamping: 10}}
+          ></motion.div>
+        </motion.div>
         <motion.div
           variants={gridSquareVariants}
           className="bg-slate-800 aspect-square rounded-md flex justify-center items-center gap-10"
