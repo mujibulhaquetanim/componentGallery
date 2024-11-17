@@ -1,6 +1,7 @@
-import { motion } from "framer-motion";
+import { motion, useScroll } from "framer-motion";
 
 export default function FramerMotion() {
+  const { scrollYProgress: completionProgress } = useScroll();
   const gridContainerVariants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1, transition: { staggerChildren: 0.25 } },
@@ -56,13 +57,20 @@ export default function FramerMotion() {
             className="w-1/3 h-1/3 bg-rose-400 cursor-grab rounded-md"
             drag
             dragConstraints={{ top: -100, right: 100, bottom: 100, left: -100 }}
-            dragTransition={{bounceStiffness: 600, bounceDamping: 10}}
+            dragTransition={{ bounceStiffness: 600, bounceDamping: 10 }}
           ></motion.div>
         </motion.div>
         <motion.div
           variants={gridSquareVariants}
           className="bg-slate-800 aspect-square rounded-md flex justify-center items-center gap-10"
-        ></motion.div>
+        >
+          <motion.div className="aspect-square w-40 bg-gray-400/25 rounded-xl fixed">
+            <motion.div
+              className="w-full bg-gray-400 rounded-xl h-full origin-top"
+              style={{ scaleY: completionProgress }}
+            ></motion.div>
+          </motion.div>
+        </motion.div>
         <motion.div
           variants={gridSquareVariants}
           className="bg-slate-800 aspect-square rounded-md flex justify-center items-center gap-10"
