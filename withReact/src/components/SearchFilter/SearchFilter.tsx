@@ -4,8 +4,24 @@ import { Container, Form } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useState } from "react";
 
+type procedure = (...args: unknown[]) => void;
+
 export default function SearchFilter() {
   const [search, setSearch] = useState("");
+
+  const debounce = <F extends procedure>(
+    fn: F,
+    delay: number
+  ): ((...args: Parameters<F>) => void) => {
+    let timeout: ReturnType<typeof setTimeout>;
+    return (...args: Parameters<F>): void => {
+      clearTimeout(timeout);
+
+      timeout = setTimeout(() => {
+        fn(...args);
+      }, delay);
+    };
+  };
 
   // Filter data based on the search input
   const filteredData = dummyData.filter((item) =>
