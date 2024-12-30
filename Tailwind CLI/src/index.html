@@ -61,14 +61,29 @@
     <script>
       document.querySelectorAll("nav a").forEach((link) => {
         link.addEventListener("click", async (e) => {
-          e.preventDefault(); // Prevent default navigation
-          const href = link.getAttribute("href"); // Get the href value
-
+          e.preventDefault();
+          const href = e.target.getAttribute("href");
           try {
-            const response = await fetch(href); // Fetch the page
+            const response = await fetch(href);
             if (!response.ok) throw new Error("Page not found");
-            const content = await response.text();
-            document.getElementById("content").innerHTML = content; // Load content
+
+            let content = await response.text(); // Get the content of the page
+            console.log(content);
+
+            // Dynamically update relative paths in the content to absolute paths for images, scripts, and styles. This is necessary because the content is loaded from a different location.
+            const basePath = href.substring(0, href.lastIndexOf("/") + 1); // Get base path from href
+            console.log(basePath);
+
+            // Update relative paths in the content to absolute paths. the regex pattern matches src and href attributes that do not start with http://, https://, or /. The replacement function prepends the base path to the matched path. The g flag is used to replace all occurrences of the pattern. The updated content is then set as the innerHTML of the content element.
+            content = content.replace(
+              /(src|href)=["'](?!https?:\/\/|\/)([^"']+)["']/g,
+              (match, attr, path) => {
+                return `${attr}="${basePath}${path}"`;
+              }
+            );
+            console.log(content);
+
+            document.getElementById("content").innerHTML = content;
           } catch (error) {
             document.getElementById("content").innerHTML =
               "<p>Error loading component</p>";
