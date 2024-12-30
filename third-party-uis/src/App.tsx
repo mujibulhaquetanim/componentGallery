@@ -11,6 +11,7 @@ import SlidesPerView from "./swiper/SlidesPerView";
 import Freemode from "./swiper/FreeMode";
 import SlidesPerGroup from "./swiper/SlidesPerGroup";
 import FramerMotion from "./framer-motion/FramerMotion";
+import CarouselThreeD from "./swiper/ThreeD-carousel";
 const App: React.FC = function () {
   return (
     <>
@@ -26,6 +27,7 @@ const App: React.FC = function () {
       <SlidesPerView />
       <Freemode />
       <SlidesPerGroup/>
+      <CarouselThreeD/>
     </>
   );
 };
