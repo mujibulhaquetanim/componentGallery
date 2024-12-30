@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Component Showcase</title>
+    <link rel="stylesheet" href="../output/style.css" />
+  </head>
+  <body class="space-y-5">
+    <!-- Navigation Bar -->
+    <nav class="shadow-lg text-black z-50">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="flex justify-between items-center h-16">
+          <div class="">
+            <div class="ml-10 flex items-center space-x-4 justify-between">
+              <a
+                href="./projects/notificationDot.html"
+                class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 border-[5px] border-red-500"
+                >Notification Dot</a
+              >
+              <a
+                href="./projects/stackDivs.html"
+                class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+                >Stack Divs</a
+              >
+              <a
+                href="./projects/MasonaryLayout.html"
+                class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+                >Masonary Layout</a
+              >
+              <a
+                href="./projects/LoadsOfcomponents.html"
+                class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+                >Loads of Components</a
+              >
+              <a
+                href="./projects/teamTigers.html"
+                class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+                >Team Tigers</a
+              >
+              <a
+                href="./projects/audio-video.html"
+                class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+                >Audio-Video</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Content Area -->
+    <main class="max-w-7xl mx-auto py-6 px-4 mt-5">
+      <div id="content" class="bg-white shadow rounded-lg p-6">
+        <!-- Component content will be loaded here -->
+        <h2 class="text-2xl font-bold mb-4">Welcome to Component Showcase</h2>
+        <p>Click on the navigation items to view different components.</p>
+      </div>
+    </main>
+
+    <script>
+      document.querySelectorAll("nav a").forEach((link) => {
+        link.addEventListener("click", async (e) => {
+          e.preventDefault(); // Prevent default navigation
+          const href = link.getAttribute("href"); // Get the href value
+
+          try {
+            const response = await fetch(href); // Fetch the page
+            if (!response.ok) throw new Error("Page not found");
+            const content = await response.text();
+            document.getElementById("content").innerHTML = content; // Load content
+          } catch (error) {
+            document.getElementById("content").innerHTML =
+              "<p>Error loading component</p>";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
