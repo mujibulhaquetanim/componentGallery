@@ -7,15 +7,15 @@ module.exports = {
       keyframes: {
         typing: {
           '0%': { width: '0' },
-          '100%': { width: '285px' },
+          '100%': { width: '1000px' },
         },
         blink: {
           '50%': { borderColor: 'transparent' },
         },
       },
       animation: {
-        typing: 'typing 4s steps(22) infinite',
-        blink: 'blink .5s step-end infinite alternate',
+        typing: 'typing 10s steps(74) infinite',
+        blink: 'blink 0.5s step-end infinite alternate',
       },
     },
   },
