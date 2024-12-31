@@ -3,8 +3,10 @@ import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/autoplay";
 import { EffectCoverflow, Autoplay } from "swiper/modules";
+import { useState } from "react";
 
 export default function CarouselThreeD() {
+  const [activeIndex, setActiveIndex] = useState(0);
   const images = [
     "https://swiperjs.com/demos/images/nature-1.jpg",
     "https://swiperjs.com/demos/images/nature-2.jpg",
@@ -22,14 +24,15 @@ export default function CarouselThreeD() {
       effect={"coverflow"}
       grabCursor={true}
       centeredSlides={true}
-      spaceBetween={0}
+      spaceBetween={8}
       loop={true}
       slidesPerView={"auto"}
+      onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
       coverflowEffect={{
         rotate: 0,
         stretch: 0,
         depth: 4,
-        modifier: 12,
+        modifier: 2.5,
         slideShadows: true,
       }}
       autoplay={{
@@ -37,14 +40,20 @@ export default function CarouselThreeD() {
         disableOnInteraction: false,
       }}
       modules={[EffectCoverflow, Autoplay]}
-      className="swiper w-full pt-12 pb-12"
+      className="swiper w-full"
     >
       {images.map((src, index) => (
         <SwiperSlide
           key={index}
-          className="swiper-slide flex bg-center bg-cover w-[200px] h-[200px]"
+          className={`mx-1 w-[200px] h-[150px] transition-all ${
+            activeIndex === index ? "border-3 border-green-700 rounded-lg" : ""
+          }`}
         >
-          <img className="block w-full" src={src} alt={`Slide ${index + 1}`} />
+          <img
+            className="block w-full h-full object-cover"
+            src={src}
+            alt={`Slide ${index + 1}`}
+          />
         </SwiperSlide>
       ))}
     </Swiper>
