@@ -1,7 +1,8 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
-import { EffectCoverflow } from "swiper/modules";
+import "swiper/css/autoplay";
+import { EffectCoverflow, Autoplay } from "swiper/modules";
 
 export default function CarouselThreeD() {
   const images = [
@@ -35,7 +36,7 @@ export default function CarouselThreeD() {
         delay: 2500,
         disableOnInteraction: false,
       }}
-      modules={[EffectCoverflow]}
+      modules={[EffectCoverflow, Autoplay]}
       className="swiper w-full pt-12 pb-12"
     >
       {images.map((src, index) => (
