@@ -1,15 +1,13 @@
 // Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/free-mode';
-import 'swiper/css/pagination';
-
-// import './styles.css';
+import "swiper/css";
+import "swiper/css/free-mode";
+import "swiper/css/pagination";
 
 // import required modules
-import { FreeMode, Pagination } from 'swiper/modules';
+import { FreeMode, Pagination } from "swiper/modules";
 
 export default function Freemode() {
   return (
@@ -22,17 +20,13 @@ export default function Freemode() {
           clickable: true,
         }}
         modules={[FreeMode, Pagination]}
-        className="w-full h-full m-7"
+        className="w-full h-full mb-3 border border-green-800"
       >
-        <SwiperSlide className='w-32 h-28 border'>Slide 1</SwiperSlide>
-        <SwiperSlide className='w-32 h-28 border'>Slide 2</SwiperSlide>
-        <SwiperSlide className='w-32 h-28 border'>Slide 3</SwiperSlide>
-        <SwiperSlide className='w-32 h-28 border'>Slide 4</SwiperSlide>
-        <SwiperSlide className='w-32 h-28 border'>Slide 5</SwiperSlide>
-        <SwiperSlide className='w-32 h-28 border'>Slide 6</SwiperSlide>
-        <SwiperSlide className='w-32 h-28 border'>Slide 7</SwiperSlide>
-        <SwiperSlide className='w-32 h-28 border'>Slide 8</SwiperSlide>
-        <SwiperSlide className='w-32 h-28 border'>Slide 9</SwiperSlide>
+        {Array.from({ length: 9 }, (_, index) => (
+          <SwiperSlide className="w-32 h-28 border" key={index}>
+            Slide {index + 1}
+          </SwiperSlide>
+        ))}
       </Swiper>
     </>
   );
