@@ -2,7 +2,15 @@
 
 Welcome to the Component Gallery repository! This repository contains a collection of various UI components and layouts built using different technologies. The repository is organized into three main directories: `tailwind-cli`, `third-party-uis`, and `with-react`.
 
-- If you are focused exclusively on comprehensive projects, you might consider exploring the following options: [Project repository](https://github.com/mujibulhaquetanim/Frontend-Functionalities.git): 
+- If you are focused exclusively on comprehensive projects, you might consider exploring the following options: [Project repository](https://github.com/mujibulhaquetanim/Frontend-Functionalities.git):
+
+## Live Previews
+
+- [Tailwind Projects](https://tw-projects.netlify.app/): This repository contains a collection of various UI components and layouts built using Tailwind CLI.
+
+- [Third Party UIs](https://third-party-ui.netlify.app/): This repository contains a collection of various UI components and layouts built using different third-party UI libraries.
+
+- [React Projects](https://tw-react-components.netlify.app/): This repository contains a collection of various UI components and layouts built using React.
 
 ## Directories
 
@@ -46,7 +54,7 @@ This directory contains components and layouts built using React.
 - **SingleComponents**: Individual React components.
 - **drag_drop**: Components for drag and drop functionality.
   <br>
-**And Many more...**
+  **And Many more...**
 
 ## Getting Started
 
