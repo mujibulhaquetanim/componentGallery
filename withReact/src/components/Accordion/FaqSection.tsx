@@ -1,4 +1,4 @@
-import Accordion from "./Accordion";
+import Accordion from "./OnClickAccordion";
 import { FAQdata } from "./dummyFAQ";
 
 export default function FaqSection() {
@@ -8,6 +8,7 @@ export default function FaqSection() {
         return (
           <Accordion
             key={value.id}
+            id={value.id}
             answer={value.answer}
             question={value.question}
           />
