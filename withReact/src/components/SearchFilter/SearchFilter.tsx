@@ -4,23 +4,33 @@ import { Container, Form } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useState } from "react";
 
-type procedure = (...args: unknown[]) => void;
+//difference between debounce and throttle is that debounce waits for a specific time interval before executing the function while throttle executes the function at regular intervals. for example, debounce waits for a specific time interval before executing the function and throttle executes the function at regular intervals like every 100ms.
+
+// unknown[] is a generic type that represents an array of unknown elements of any type that is passed to the function as an argument. This is useful when you don't know the exact type of the arguments that are passed to the function. difference between unknown and any is that unknown is a type that is not known at compile time, while any is a type that is known at compile time. here we are using unknown because we don't know the type of the arguments that are passed to the function.
+type Procedure<T extends unknown[]> = (...args: T) => void;
 
 export default function SearchFilter() {
   const [search, setSearch] = useState("");
 
-  const debounce = <F extends procedure>(
-    fn: F,
+  const debounce = <T extends unknown[]>(
+    fn: Procedure<T>,
     delay: number
-  ): ((...args: Parameters<F>) => void) => {
+  ): Procedure<T> => {
     let timeout: ReturnType<typeof setTimeout>;
-    return (...args: Parameters<F>): void => {
+    return (...args: T): void => {
       clearTimeout(timeout);
-
-      timeout = setTimeout(() => {
-        fn(...args);
-      }, delay);
+      timeout = setTimeout(() => fn(...args), delay);
     };
+  };
+
+  // Inline the debounced function
+  const debouncedSearch = debounce((value: string) => {
+    setSearch(value);
+  }, 1000);
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    debouncedSearch(value); // Debounced function is invoked here
   };
 
   // Filter data based on the search input
@@ -36,7 +46,7 @@ export default function SearchFilter() {
           <Form.Control
             size="lg"
             type="text"
-            onChange={(e) => setSearch(e.target.value)}
+            onChange={handleInputChange} // Debounced input handler
             placeholder="Search"
           />
         </Form.Group>
