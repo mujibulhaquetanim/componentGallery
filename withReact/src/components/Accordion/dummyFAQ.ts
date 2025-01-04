@@ -1,5 +1,5 @@
 export interface IFaq {
-    id?: number;
+    id: number;
     question: string;
     answer: string;
 }
