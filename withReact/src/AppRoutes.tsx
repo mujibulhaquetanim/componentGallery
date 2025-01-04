@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import Components from "./Layouts/Components";
+import Components from "./Layouts/NavBar";
 import ErrorPage from "./Layouts/Error";
 
 import { DragAndDrop } from "./components/drag_drop/DragAndDrop";
@@ -14,6 +14,7 @@ import { ProgressBar } from "./components/SingleComponents/ProgressBar";
 import ListSort from "./components/drag_drop/ListSort";
 import RatingStars from "./components/SingleComponents/RatingStars";
 import SearchFilter from "./components/SearchFilter/SearchFilter";
+import FaqSection from "./components/Accordion/FaqSection";
 
 export const route = createBrowserRouter([
   {
@@ -39,6 +40,7 @@ export const route = createBrowserRouter([
       },
       { path: "progressBar", element: <ProgressBar /> },
       { path: "searchfilter", element: <SearchFilter /> },
+      { path: "accordion", element: <FaqSection /> },
     ],
   },
   {
