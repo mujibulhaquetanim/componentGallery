@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { IFaq } from "./dummyFAQ";
-export default function Accordion({ id, question, answer }: IFaq) {
+export default function OnClickAccordion({ id, question, answer }: IFaq) {
   const [show, setShow] = useState<boolean>(false);
   return (
     <div
