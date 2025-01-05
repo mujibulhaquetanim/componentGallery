@@ -29,7 +29,7 @@ export default function FaqSection() {
               id={value.id}
               answer={value.answer}
               question={value.question}
-              activeId={index === value.id ? value.id : null}
+              activeId={index}
               setActiveId={setIndex}
             />
           );
