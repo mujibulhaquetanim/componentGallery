@@ -1,6 +1,5 @@
-
 import { type MouseEvent } from "react";
-
+import { useState } from "react";
 
 interface Card {
   id: number;
@@ -16,6 +15,32 @@ interface CarouselButtonProps {
   direction: "left" | "right";
 }
 
+
+const CardContent = ({ card }: { card: Card }) => (
+  <>
+    <div
+      className="w-2/6 h-60 rounded-xl bg-cover bg-center shadow-md border border-gray-300"
+      style={{ backgroundImage: `url(${card.image})` }}
+    />
+    <div className="space-y-2 w-4/6">
+      <div>
+        <h1 className="text-xl font-bold">{card.name}</h1>
+        <p className="text-sm text-gray-500">{card.role}</p>
+      </div>
+      <p className="text-justify text-sm text-gray-700">&quot;{card.text}&quot;</p>
+      <div>
+        {card.tags.map((tag) => (
+          <button
+            key={tag}
+            className="rounded-xl border px-3 py-1 m-2 border-slate-700 text-sm"
+          >
+            {tag}
+          </button>
+        ))}
+      </div>
+    </div>
+  </>
+);
 
 
 const cards: Card[] = [
