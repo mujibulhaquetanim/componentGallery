@@ -15,6 +15,18 @@ interface CarouselButtonProps {
   direction: "left" | "right";
 }
 
+const CarouselButton = ({ onClick, direction }: CarouselButtonProps) => (
+  <button
+    onClick={onClick}
+    className={`absolute z-50 ${
+      direction === "left" ? "left-0" : "right-0"
+    } text-2xl border rounded-full p-1 m-1 bg-white shadow`}
+    aria-label={`${direction === "left" ? "Previous" : "Next"} card`}
+    title={`${direction === "left" ? "Previous" : "Next"} card`}
+  >
+    {direction === "left" ? "←" : "→"}
+  </button>
+);
 
 const CardContent = ({ card }: { card: Card }) => (
   <>
@@ -42,6 +54,53 @@ const CardContent = ({ card }: { card: Card }) => (
   </>
 );
 
+export default function ClientExperienceSection() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const handlePrev = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? cards.length - 1 : prevIndex - 1
+    );
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === cards.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  return (
+    <div className="parent w-full h-screen flex items-center justify-center bg-gray-100">
+      <div className="container relative w-2/3 h-96 flex items-center justify-center gap-3 overflow-hidden">
+        <CarouselButton onClick={handlePrev} direction="left" />
+        <CarouselButton onClick={handleNext} direction="right" />
+
+        {cards.map((card, index) => {
+          const isActive = index === currentIndex;
+          const isNext = index === (currentIndex + 1) % cards.length;
+          const isPrev = index === (currentIndex - 1 + cards.length) % cards.length;
+
+          return (
+            <div
+              key={card.id}
+              className={`absolute w-full h-full flex items-center justify-between gap-14 px-8 transition-transform duration-700 ease-in-out ${
+                isActive
+                  ? "translate-x-0 opacity-100 z-10"
+                  : isNext
+                  ? "translate-x-full opacity-0 z-0"
+                  : isPrev
+                  ? "-translate-x-full opacity-0 z-0"
+                  : "opacity-0"
+              }`}
+            >
+              <CardContent card={card} />
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
 
 const cards: Card[] = [
   {
