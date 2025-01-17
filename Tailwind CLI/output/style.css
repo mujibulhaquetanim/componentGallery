@@ -722,6 +722,10 @@ video {
   margin-top: 0px;
 }
 
+.mt-12 {
+  margin-top: 3rem;
+}
+
 .mt-16 {
   margin-top: 4rem;
 }
@@ -740,14 +744,6 @@ video {
 
 .mt-5 {
   margin-top: 1.25rem;
-}
-
-.mt-10 {
-  margin-top: 2.5rem;
-}
-
-.mt-12 {
-  margin-top: 3rem;
 }
 
 .box-border {
@@ -854,10 +850,6 @@ video {
   width: 50%;
 }
 
-.w-11\/12 {
-  width: 91.666667%;
-}
-
 .w-14 {
   width: 3.5rem;
 }
@@ -868,10 +860,6 @@ video {
 
 .w-2\/3 {
   width: 66.666667%;
-}
-
-.w-2\/4 {
-  width: 50%;
 }
 
 .w-20 {
@@ -929,10 +917,6 @@ video {
 
 .max-w-xs {
   max-width: 20rem;
-}
-
-.max-w-\[50\%\] {
-  max-width: 50%;
 }
 
 .rotate-1 {
@@ -1624,6 +1608,16 @@ video {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
+.drop-shadow-sm {
+  --tw-drop-shadow: drop-shadow(0 1px 1px rgb(0 0 0 / 0.05));
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.drop-shadow-lg {
+  --tw-drop-shadow: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
 .backdrop-blur-md {
   --tw-backdrop-blur: blur(12px);
   -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
@@ -1688,6 +1682,27 @@ video {
       max-width: 1536px;
     }
   }
+}
+
+.backdrop\:bg-red-300::backdrop {
+  --tw-bg-opacity: 1;
+  background-color: rgb(252 165 165 / var(--tw-bg-opacity, 1));
+}
+
+.backdrop\:opacity-50::backdrop {
+  opacity: 0.5;
+}
+
+.backdrop\:opacity-10::backdrop {
+  opacity: 0.1;
+}
+
+.backdrop\:opacity-\[\]::backdrop {
+  opacity: ;
+}
+
+.backdrop\:opacity-\[0\.5\]::backdrop {
+  opacity: 0.5;
 }
 
 .hover\:mt-10:hover {
