@@ -6,7 +6,7 @@ export const ProfileCard: React.FC = function () {
     <div className="h-screen grid place-items-center">
       <div className="upc m-3 grid place-items-center border w-1/3 rounded-md">
         <div className="w-full">
-          <div className="bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% w-full h-40 drop-shadow-2xl"></div>
+          <div className="bg-linear-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% w-full h-40 drop-shadow-2xl"></div>
           <div className="image flex justify-center -mt-24">
             <img
               className="w-36 h-36 rounded-full z-10"
@@ -26,7 +26,7 @@ export const ProfileCard: React.FC = function () {
             religion, politics and society.
           </div>
           <div className="flex justify-center">
-            <button className="bg-green-950 text-white p-3 rounded-sm m-3 hover:scale-95">
+            <button className="bg-green-950 text-white p-3 rounded-xs m-3 hover:scale-95">
               Contact Me
             </button>
           </div>

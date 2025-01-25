@@ -26,7 +26,7 @@ const ListSort: React.FC = function () {
       {people.map((beauty, index) => (
         <div
           key={index}
-          className="relative flex space-x-2 border rounded p-2 bg-slate-400 cursor-grab"
+          className="relative flex space-x-2 border rounded-sm p-2 bg-slate-400 cursor-grab"
           draggable
           onDragStart={() => (dragPerson.current = index)}
           onDragEnter={() => (dragOverPerson.current = index)}

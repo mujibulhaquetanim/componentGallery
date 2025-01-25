@@ -51,7 +51,7 @@ const ControlledSignUpForm: React.FC = () => {
 
   return (
     <div className="p-8 flex justify-around">
-      <form className="bg-gray-200 p-2 rounded w-1/2 mr-4">
+      <form className="bg-gray-200 p-2 rounded-sm w-1/2 mr-4">
         <div className="my-2">
           <label className="mx-4" htmlFor="fname">
             Full Name
@@ -62,7 +62,7 @@ const ControlledSignUpForm: React.FC = () => {
             id="fname"
             value={contact.fname}
             placeholder="Enter Full Name"
-            className="border border-gray-400 rounded p-1"
+            className="border border-gray-400 rounded-sm p-1"
             onChange={handleChange}
             required
           />
@@ -78,7 +78,7 @@ const ControlledSignUpForm: React.FC = () => {
             id="email"
             value={contact.email}
             placeholder="Enter Email"
-            className="border border-gray-400 rounded p-1"
+            className="border border-gray-400 rounded-sm p-1"
             onChange={handleChange}
             required
           />
@@ -94,7 +94,7 @@ const ControlledSignUpForm: React.FC = () => {
             id="password"
             value={contact.password}
             placeholder="Enter Password"
-            className="border border-gray-400 rounded p-1"
+            className="border border-gray-400 rounded-sm p-1"
             onChange={handleChange}
             required
           />
@@ -109,7 +109,7 @@ const ControlledSignUpForm: React.FC = () => {
             name="color"
             id="color"
             value={contact.color}
-            className="border border-gray-400 rounded p-1"
+            className="border border-gray-400 rounded-sm p-1"
             onChange={handleChange}
           />
         </div>
@@ -123,7 +123,7 @@ const ControlledSignUpForm: React.FC = () => {
             id="address"
             placeholder="Where Can We Find You?"
             value={contact.address}
-            className="border border-gray-400 rounded p-1"
+            className="border border-gray-400 rounded-sm p-1"
             onChange={handleChange}
             required
           />
@@ -139,7 +139,7 @@ const ControlledSignUpForm: React.FC = () => {
             id="city"
             value={contact.city}
             placeholder="Enter Your City"
-            className="border border-gray-400 rounded p-1"
+            className="border border-gray-400 rounded-sm p-1"
             onChange={handleChange}
             required
           />
@@ -153,7 +153,7 @@ const ControlledSignUpForm: React.FC = () => {
             name="state"
             id="state"
             value={contact.state}
-            className="border border-gray-400 rounded p-1"
+            className="border border-gray-400 rounded-sm p-1"
             onChange={handleChange}
             required
           >
@@ -174,7 +174,7 @@ const ControlledSignUpForm: React.FC = () => {
             id="zip"
             value={contact.zip}
             placeholder="Enter Zip/Pin Code"
-            className="border border-gray-400 rounded p-1"
+            className="border border-gray-400 rounded-sm p-1"
             onChange={handleChange}
             required
           />
@@ -194,7 +194,7 @@ const ControlledSignUpForm: React.FC = () => {
         </div>
       </form>
 
-      <div className="bg-gray-200 p-2 rounded w-1/2 flex flex-col justify-center items-center">
+      <div className="bg-gray-200 p-2 rounded-sm w-1/2 flex flex-col justify-center items-center">
         {contact.fname && (
           <p>
             {" "}

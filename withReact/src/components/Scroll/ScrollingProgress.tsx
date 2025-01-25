@@ -27,7 +27,7 @@ const ScrollingProgress: React.FC = function () {
       <div className="w-full fixed top-0">
         <div className="h-2 w-full">
           <div
-            className="h-full bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%"
+            className="h-full bg-linear-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%"
             style={{ width: `${scroll}%` }}
           ></div>
         </div>
