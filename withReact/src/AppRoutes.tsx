@@ -15,6 +15,9 @@ import ListSort from "./components/drag_drop/ListSort";
 import RatingStars from "./components/SingleComponents/RatingStars";
 import SearchFilter from "./components/SearchFilter/SearchFilter";
 import FaqSection from "./components/Accordion/FaqSection";
+import PopUpModal from "./components/PopUpModal/PopUpModal";
+import NoPortalModal from "./components/PopUpModal/NoPortalModal";
+import PortalModal from "./components/PopUpModal/PortalModal";
 
 export const route = createBrowserRouter([
   {
@@ -41,6 +44,14 @@ export const route = createBrowserRouter([
       { path: "progressBar", element: <ProgressBar /> },
       { path: "searchfilter", element: <SearchFilter /> },
       { path: "accordion", element: <FaqSection /> },
+      {
+        path: "popup",
+        element: <PopUpModal />,
+        children: [
+          { path: "no-portal", element: <NoPortalModal /> },
+          { path: "portal", element: <PortalModal /> },
+        ],
+      },
     ],
   },
   {
