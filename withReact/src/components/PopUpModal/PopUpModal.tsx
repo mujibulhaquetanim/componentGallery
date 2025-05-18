@@ -1,7 +1,18 @@
-import React from 'react'
+import React from "react";
+// import PortalModal from "./PortalModal";
+import NoPortalModal from "./NoPortalModal";
 
-export default function PopUpModal() {
+const PopUpModal: React.FC = () => {
+  const [isOpen, setIsOpen] = React.useState(false);
+
   return (
-    <div>PopUpModalOld</div>
-  )
-}
+    <div>
+      <nav className="flex gap-2">
+        {isOpen && <NoPortalModal setIsOpen={setIsOpen} />}
+      </nav>
+      <button onClick={() => setIsOpen(true)} className="p-2 border-2 bg-green-400">Open Modal</button>
+    </div>
+  );
+};
+
+export default PopUpModal;
