@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 interface Props {
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const NoPortalModal: React.FC<Props> = ({ setIsOpen }) => {
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  });
   return (
     <div
       className="flex flex-col top-0 left-0 right-0 bottom-0 fixed bg-[rgba(0,0,0,0.5)]"
@@ -16,7 +22,12 @@ const NoPortalModal: React.FC<Props> = ({ setIsOpen }) => {
         <p>
           To close the modal, click the button in the modal or in the background
         </p>
-        <button onClick={() => setIsOpen(false)} className="flex justify-center gap-3 text-white font-bold p-2 border-2 bg-red-500"><span className="font-bold bg-white">❌</span> Close Modal</button>
+        <button
+          onClick={() => setIsOpen(false)}
+          className="flex justify-center gap-3 text-white font-bold p-2 border-2 bg-red-500"
+        >
+          <span className="font-bold bg-white">❌</span> Close Modal
+        </button>
       </div>
     </div>
   );
