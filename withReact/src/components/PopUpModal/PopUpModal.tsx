@@ -4,16 +4,18 @@ import PortalModal from "./PortalModal";
 
 const PopUpModal: React.FC = () => {
   const [isOpen, setIsOpen] = React.useState(false);
+  const [hasOpened, setHasOpened] = React.useState(false);
   useEffect(() => {
     const autoModal = () => {
-      if (window.scrollY > 100) {
+      if (window.scrollY > 100 && !hasOpened) {
         setIsOpen(true);
+        setHasOpened(true);
       }
     };
 
     window.addEventListener("scroll", autoModal);
     return () => window.removeEventListener("scroll", autoModal);
-  }, []);
+  }, [hasOpened]);
 
   return (
     <div className="m-2">
