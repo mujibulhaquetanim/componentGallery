@@ -12,13 +12,6 @@ const PortalModal = ({ setIsOpen }: Props) => {
       document.body.style.overflow = "unset";
     };
   });
-  {
-    /*
-    - createPortal is a React function that allows you to render a React component outside of the DOM hierarchy of the current component. 
-    - It takes two arguments: the first is the component to render, and the second is the element to render it in.
-    - it is used here so that if other dev include any div and add a class to it, it will not effect the modal. i.e. adding div and class and wrapped it with the whole component, this will contradict modal css and modal css will not work as intended. it only activated when the portal is clicked and removed when the modal is closed
-    */
-  }
   return createPortal(
     <div
       className="flex flex-col top-0 left-0 right-0 bottom-0 fixed bg-[rgba(0,0,0,0.5)]"
