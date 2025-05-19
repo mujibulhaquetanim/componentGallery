@@ -4,9 +4,6 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-overrides:
-  tailwindcss: link:../../../.local/share/pnpm/global/5/node_modules/tailwindcss
-
 importers:
 
   .:
@@ -1491,6 +1488,9 @@ packages:
     engines: {node: '>=14.0.0'}
     hasBin: true
 
+  tailwindcss@4.0.0:
+    resolution: {integrity: sha512-ULRPI3A+e39T7pSaf1xoi58AqqJxVCLg8F/uM5A3FadUbnyDTgltVnXJvdkTjwCOGA6NazqHVcwPJC5h2vRYVQ==}
+
   tapable@2.2.1:
     resolution: {integrity: sha512-GNzQvQTOIP6RyTfE2Qxb8ZVlNmw0n88vp1szwWRimP02mnTsx3Wtn5qRdqY9w2XduFNUgvOwhNnQsjwCp+kqaQ==}
     engines: {node: '>=6'}
@@ -1923,7 +1923,7 @@ snapshots:
     dependencies:
       enhanced-resolve: 5.18.0
       jiti: 2.4.2
-      tailwindcss: link:../../../.local/share/pnpm/global/5/node_modules/tailwindcss
+      tailwindcss: 4.0.0
 
   '@tailwindcss/oxide-android-arm64@4.0.0':
     optional: true
@@ -1979,14 +1979,14 @@ snapshots:
       '@tailwindcss/oxide': 4.0.0
       lightningcss: 1.29.1
       postcss: 8.5.1
-      tailwindcss: link:../../../.local/share/pnpm/global/5/node_modules/tailwindcss
+      tailwindcss: 4.0.0
 
   '@tailwindcss/vite@4.0.0(vite@5.4.14(lightningcss@1.29.1))':
     dependencies:
       '@tailwindcss/node': 4.0.0
       '@tailwindcss/oxide': 4.0.0
       lightningcss: 1.29.1
-      tailwindcss: link:../../../.local/share/pnpm/global/5/node_modules/tailwindcss
+      tailwindcss: 4.0.0
       vite: 5.4.14(lightningcss@1.29.1)
 
   '@types/estree@1.0.6': {}
@@ -2937,6 +2937,8 @@ snapshots:
       sucrase: 3.35.0
     transitivePeerDependencies:
       - ts-node
+
+  tailwindcss@4.0.0: {}
 
   tapable@2.2.1: {}
 
