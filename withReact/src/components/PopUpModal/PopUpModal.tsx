@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
+import { useEffect, useState } from "react";
 import PortalModal from "./PortalModal";
 // import NoPortalModal from "./NoPortalModal";
 
-const PopUpModal: React.FC = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
-  const [hasOpened, setHasOpened] = React.useState(false);
+const PopUpModal = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [hasOpened, setHasOpened] = useState(false);
   useEffect(() => {
     const autoModal = () => {
       if (window.scrollY > 100 && !hasOpened) {
