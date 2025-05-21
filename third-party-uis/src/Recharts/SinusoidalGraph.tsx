@@ -10,6 +10,8 @@ import {
   ResponsiveContainer,
   BarChart,
   Bar,
+  Area,
+  AreaChart,
 } from "recharts";
 
 // Define our data point type
@@ -121,6 +123,38 @@ const SinusoidalGraph: React.FC = () => {
             <Legend />
             <Bar dataKey="value" fill="#82ca9d" name="Sine Wave" />
           </BarChart>
+        </ResponsiveContainer>
+
+        {/* area graph */}
+        <ResponsiveContainer width="100%" height="80%">
+          <AreaChart data={data}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis
+              dataKey="time"
+              label={{
+                value: "Time",
+                position: "insideBottomRight",
+                offset: -10,
+              }}
+            />
+            <YAxis
+              domain={[-amplitude - 0.2, amplitude + 0.2]}
+              label={{ value: "Amplitude", angle: -90, position: "insideLeft" }}
+            />
+            <Tooltip
+              formatter={(value) =>
+                typeof value === "number" ? value.toFixed(2) : value
+              }
+            />
+            <Legend />
+            <Area
+              type="monotone"
+              dataKey="value"
+              stroke="#8884d8"
+              fill="#8884d8"
+              name="Sine Wave"
+            />
+          </AreaChart>
         </ResponsiveContainer>
       </div>
 
