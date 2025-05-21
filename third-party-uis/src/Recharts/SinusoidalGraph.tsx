@@ -100,7 +100,6 @@ const SinusoidalGraph: React.FC = () => {
             />
           </LineChart>
         </ResponsiveContainer>
-
         {/* Bar Graph */}
         <ResponsiveContainer width="100%" height="80%">
           <BarChart data={data}>
@@ -126,7 +125,6 @@ const SinusoidalGraph: React.FC = () => {
             <Bar dataKey="value" fill="#82ca9d" name="Sine Wave" />
           </BarChart>
         </ResponsiveContainer>
-
         {/* area graph */}
         <ResponsiveContainer width="100%" height="80%">
           <AreaChart data={data}>
@@ -140,6 +138,7 @@ const SinusoidalGraph: React.FC = () => {
               }}
             />
             <YAxis
+              // here domain is fixed range
               domain={[-amplitude - 0.2, amplitude + 0.2]}
               label={{ value: "Amplitude", angle: -90, position: "insideLeft" }}
             />
@@ -159,13 +158,23 @@ const SinusoidalGraph: React.FC = () => {
           </AreaChart>
         </ResponsiveContainer>
 
-        {/* scatter graph */}
+        {/* scatter graph, The ScatterChart needs explicit instructions to display its continuous domain in a discrete-like manner*/}
         <ResponsiveContainer width="100%" height="80%">
-          <ScatterChart>
+          <ScatterChart data={data}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis
               dataKey="time"
               type="number"
+              /*
+              here domain is dynamic
+              - 'dataMin' becomes the smallest time value in the current dataset (after older points are removed)
+              - 'dataMax' becomes the largest time value
+              */
+              domain={["dataMin", "dataMax"]}
+              // tickCount is the number of ticks to show on the x-axis.
+              tickCount={10}
+              // allowDecimals is a boolean that controls whether decimal values are allowed on the x-axis.
+              allowDecimals={false}
               label={{
                 value: "Time",
                 position: "insideBottomRight",
@@ -188,13 +197,12 @@ const SinusoidalGraph: React.FC = () => {
               fill="#ff7300"
               line={{ stroke: "#ff7300" }}
               lineType="joint"
-              // These are the key properties you were missing:
-              xAxisId={0}
-              yAxisId={0}
               dataKey="value"
-              // Specify which properties to use for x and y coordinates
-              cx="time"
-              cy="value"
+              // Remove these properties as they're causing the inconsistency
+              // xAxisId={0}
+              // yAxisId={0}
+              // cx="time"
+              // cy="value"
             />
           </ScatterChart>
         </ResponsiveContainer>
