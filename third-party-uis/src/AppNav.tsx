@@ -53,6 +53,13 @@ const AppNav: React.FC = function () {
         >
           Next UI
         </NavLink>
+        <NavLink
+          className="border-2 p-2 rounded-md hover:bg-slate-400"
+          to="/sinusoidal-graph"
+          end
+        >
+          Sinusoidal Graph
+        </NavLink>
       </nav>
       <h1 className="text-2xl font-bold mt-4">Welcome to Third-Party UIs</h1>
       <p className="mb-4">
