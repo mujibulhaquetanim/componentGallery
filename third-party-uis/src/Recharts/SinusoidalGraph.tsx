@@ -54,7 +54,7 @@ const SinusoidalGraph: React.FC = () => {
         // keep only the last 50 data points in the array and in the graph frame and remove every first data point to create dynamic graph
         if (newData.length > maxDataPoints) {
           // on every update, remove the first data point, this will create dynamic graph, slice will return a new array without the first element
-          newData.slice(1);
+          return newData.slice(1);
         }
         return newData;
       });
@@ -63,8 +63,8 @@ const SinusoidalGraph: React.FC = () => {
   }, []); // // Empty dependency array ensures this runs once on mount
 
   return (
-    <div className="w-full h-[80vh]">
-      <h2>Real-time Sinusoidal Wave</h2>
+    <div className="w-full h-[80vh] mt-7">
+      <h2 className="font-bold text-xl mb-3">Real-time Sinusoidal Wave</h2>
       <ResponsiveContainer width="100%" height="80%">
         <LineChart data={data}>
           <CartesianGrid strokeDasharray="3 3" />
@@ -73,7 +73,7 @@ const SinusoidalGraph: React.FC = () => {
             label={{
               value: "Time",
               position: "insideBottomRight",
-              offset: -10,
+              offset: -5,
             }}
           />
           <YAxis
@@ -93,6 +93,9 @@ const SinusoidalGraph: React.FC = () => {
           />
         </LineChart>
       </ResponsiveContainer>
+      <div className="text-center mt-3">
+        <p>Updating every 100ms | Showing {maxDataPoints} points</p>
+      </div>
     </div>
   );
 };
