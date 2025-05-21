@@ -12,6 +12,8 @@ import {
   Bar,
   Area,
   AreaChart,
+  ScatterChart,
+  Scatter,
 } from "recharts";
 
 // Define our data point type
@@ -155,6 +157,46 @@ const SinusoidalGraph: React.FC = () => {
               name="Sine Wave"
             />
           </AreaChart>
+        </ResponsiveContainer>
+
+        {/* scatter graph */}
+        <ResponsiveContainer width="100%" height="80%">
+          <ScatterChart>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis
+              dataKey="time"
+              type="number"
+              label={{
+                value: "Time",
+                position: "insideBottomRight",
+                offset: -10,
+              }}
+            />
+            <YAxis
+              domain={[-amplitude - 0.2, amplitude + 0.2]}
+              label={{ value: "Amplitude", angle: -90, position: "insideLeft" }}
+            />
+            <Tooltip
+              formatter={(value) =>
+                typeof value === "number" ? value.toFixed(2) : value
+              }
+            />
+            <Legend />
+            <Scatter
+              name="Sine Wave"
+              data={data}
+              fill="#ff7300"
+              line={{ stroke: "#ff7300" }}
+              lineType="joint"
+              // These are the key properties you were missing:
+              xAxisId={0}
+              yAxisId={0}
+              dataKey="value"
+              // Specify which properties to use for x and y coordinates
+              cx="time"
+              cy="value"
+            />
+          </ScatterChart>
         </ResponsiveContainer>
       </div>
 
