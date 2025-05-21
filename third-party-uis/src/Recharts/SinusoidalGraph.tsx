@@ -1,5 +1,14 @@
-import { time } from "framer-motion";
 import React, { useState, useEffect } from "react";
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  ResponsiveContainer,
+} from "recharts";
 
 // Define our data point type
 interface DataPoint {
@@ -51,11 +60,39 @@ const SinusoidalGraph: React.FC = () => {
       });
     }, 100);
     return () => clearInterval(interval);
-  }, []);
+  }, []); // // Empty dependency array ensures this runs once on mount
 
   return (
-    <div>
+    <div className="w-full h-[80vh]">
       <h2>Real-time Sinusoidal Wave</h2>
+      <ResponsiveContainer width="100%" height="80%">
+        <LineChart data={data}>
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis
+            dataKey="time"
+            label={{
+              value: "Time",
+              position: "insideBottomRight",
+              offset: -10,
+            }}
+          />
+          <YAxis
+            domain={[-amplitude - 0.2, amplitude + 0.2]}
+            label={{ value: "Amplitude", angle: -90, position: "insideLeft" }}
+          />
+          <Tooltip formatter={(value) => Number(value).toFixed(2)} />{" "}
+          {/* typeof value === 'number' ? value.toFixed(2) : value */}
+          <Legend />
+          <Line
+            type="monotone"
+            dataKey="value"
+            stroke="#8884d8"
+            dot={false}
+            isAnimationActive={false}
+            name="Sine Wave"
+          />
+        </LineChart>
+      </ResponsiveContainer>
     </div>
   );
 };
