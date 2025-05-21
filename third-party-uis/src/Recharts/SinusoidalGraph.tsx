@@ -8,6 +8,8 @@ import {
   Tooltip,
   Legend,
   ResponsiveContainer,
+  BarChart,
+  Bar,
 } from "recharts";
 
 // Define our data point type
@@ -63,36 +65,65 @@ const SinusoidalGraph: React.FC = () => {
   }, []); // // Empty dependency array ensures this runs once on mount
 
   return (
-    <div className="w-full h-[80vh] mt-7">
+    <div className="min-w-full mt-7">
       <h2 className="font-bold text-xl mb-3">Real-time Sinusoidal Wave</h2>
-      <ResponsiveContainer width="100%" height="80%">
-        <LineChart data={data}>
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis
-            dataKey="time"
-            label={{
-              value: "Time",
-              position: "insideBottomRight",
-              offset: -5,
-            }}
-          />
-          <YAxis
-            domain={[-amplitude - 0.2, amplitude + 0.2]}
-            label={{ value: "Amplitude", angle: -90, position: "insideLeft" }}
-          />
-          <Tooltip formatter={(value) => Number(value).toFixed(2)} />{" "}
-          {/* typeof value === 'number' ? value.toFixed(2) : value */}
-          <Legend />
-          <Line
-            type="monotone"
-            dataKey="value"
-            stroke="#8884d8"
-            dot={false}
-            isAnimationActive={false}
-            name="Sine Wave"
-          />
-        </LineChart>
-      </ResponsiveContainer>
+      <div className="w-full h-[80vh] grid grid-cols-2">
+        <ResponsiveContainer width="100%" height="80%">
+          <LineChart data={data}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis
+              dataKey="time"
+              label={{
+                value: "Time",
+                position: "insideBottomRight",
+                offset: -5,
+              }}
+            />
+            <YAxis
+              domain={[-amplitude - 0.2, amplitude + 0.2]}
+              label={{ value: "Amplitude", angle: -90, position: "insideLeft" }}
+            />
+            <Tooltip formatter={(value) => Number(value).toFixed(2)} />{" "}
+            {/* typeof value === 'number' ? value.toFixed(2) : value */}
+            <Legend />
+            <Line
+              type="monotone"
+              dataKey="value"
+              stroke="#8884d8"
+              dot={false}
+              isAnimationActive={false}
+              name="Sine Wave"
+            />
+          </LineChart>
+        </ResponsiveContainer>
+
+        {/* Bar Graph */}
+        <ResponsiveContainer width="100%" height="80%">
+          <BarChart data={data}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis
+              dataKey="time"
+              label={{
+                value: "Time",
+                position: "insideBottomRight",
+                offset: -10,
+              }}
+            />
+            <YAxis
+              domain={[-amplitude - 0.2, amplitude + 0.2]}
+              label={{ value: "Amplitude", angle: -90, position: "insideLeft" }}
+            />
+            <Tooltip
+              formatter={(value) =>
+                typeof value === "number" ? value.toFixed(2) : value
+              }
+            />
+            <Legend />
+            <Bar dataKey="value" fill="#82ca9d" name="Sine Wave" />
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
+
       <div className="text-center mt-3">
         <p>Updating every 100ms | Showing {maxDataPoints} points</p>
       </div>
