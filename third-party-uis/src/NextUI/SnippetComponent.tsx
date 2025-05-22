@@ -1,4 +1,4 @@
-import { Snippet } from "@nextui-org/react";
+import { Snippet } from "@heroui/react";
 
 export default function SnippetComponent() {
   return (

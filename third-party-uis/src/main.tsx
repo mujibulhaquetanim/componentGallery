@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import AppNav from "./AppNav.tsx";
-import { NextUIProvider } from "@nextui-org/react";
+import { HeroUIProvider as NextUIProvider } from "@heroui/react";
 import { BrowserRouter, Route, Routes } from "react-router";
 import Swiper from "./swiper/Swiper.tsx";
 import GsapIndex from "./Gsap/GsapIndex.tsx";

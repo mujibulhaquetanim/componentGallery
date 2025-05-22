@@ -1,5 +1,5 @@
-import { Tooltip, Button } from "@nextui-org/react";
-import { Popover, PopoverTrigger, PopoverContent } from "@nextui-org/popover";
+import { Tooltip, Button } from "@heroui/react";
+import { Popover, PopoverTrigger, PopoverContent } from "@heroui/popover";
 
 export default function TooltipComponent() {
   return (
