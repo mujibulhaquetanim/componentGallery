@@ -17,7 +17,7 @@ export default function SearchFilter() {
   // useEffect(()=>{
   //   const fetchData = async () => {
   //     try {
-  //       const response = await fetch(`https://reqres.in/api/users/{search}`);
+  //       const response = await fetch(`https://jsonplaceholder.typicode.com/api/users?search=${search}`);
   //       const data = await response.json();
   //       // setData(data.data);
   //     } catch (error) {
