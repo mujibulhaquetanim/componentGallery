@@ -3,6 +3,7 @@ import Table from "react-bootstrap/Table";
 import { Container, Form } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useState } from "react";
+// import { useEffect } from "react";
 
 //difference between debounce and throttle is that debounce waits for a specific time interval before executing the function while throttle executes the function at regular intervals. for example, debounce waits for a specific time interval before executing the function and throttle executes the function at regular intervals like every 100ms.
 
@@ -11,6 +12,21 @@ type Procedure<T extends unknown[]> = (...args: T) => void;
 
 export default function SearchFilter() {
   const [search, setSearch] = useState("");
+  // const [data, setData] = useState([]);
+
+  // useEffect(()=>{
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await fetch(`https://reqres.in/api/users/{search}`);
+  //       const data = await response.json();
+  //       // setData(data.data);
+  //     } catch (error) {
+  //       console.error("Error fetching data:", error);
+  //     }
+  //   }
+
+  //   fetchData();
+  // },[search])
 
   const debounce = <T extends unknown[]>(
     fn: Procedure<T>,
@@ -63,6 +79,7 @@ export default function SearchFilter() {
         </thead>
         <tbody>
           {filteredData.length > 0 ? (
+            // for fetched data, map through data.map()
             filteredData.map((item) => (
               <tr key={item.id}>
                 <td>{item.first_name}</td>
